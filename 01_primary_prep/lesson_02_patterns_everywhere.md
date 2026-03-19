@@ -1,275 +1,298 @@
-# Lesson 2: Patterns Everywhere! 🔁🌴
+# Lesson 2: Patterns Everywhere! 🔄🌴
 
 ### Caribbean AI Curriculum — Primary/Prep School (Ages 6-11)
 ### Designed by **Adrian Dunkley** | [Adriandunkley.net](https://Adriandunkley.net) | **FREE**
 
 ---
 
-## Wah Gwaan, Pattern Detectives!
+## Wha' Happenin', Pattern Detectives!
 
-Today we going learn about something dat AI LOVE more than anything — **PATTERNS!**
+Today we going learn about **PATTERNS** — and trust mi, once yuh start looking
+fi dem, yuh going see dem EVERYWHERE!
 
-A pattern is when something happen over and over in a way yuh can predict.
-Yuh already know nuff patterns — yuh just never call dem dat before!
+AI love patterns more dan Trini love doubles on a Saturday morning. Why?
+Because **finding patterns is how AI learn!**
 
 ---
 
 ## 🌀 What Is a Pattern?
 
-A pattern is when tings follow a **rule** or **repeat** in a way yuh can figure out.
+A pattern is something dat **repeat** in a way yuh can predict.
 
-> **Think about it:** Monday, Tuesday, Wednesday... what come next?
-> THURSDAY! Yuh know dat because di days of di week follow a **pattern**!
+Think about it:
 
-AI is BRILLIANT at finding patterns. In fact, dat is one of di MAIN tings AI
-does — it look at NUFF data and find di patterns hiding inside!
+> **Monday yuh go school. Tuesday yuh go school. Wednesday yuh go school.**
+> Yuh see di pattern? Yuh go school on weekdays!
+
+> **Every December in Jamaica, breeze blow cold-cold.**
+> Dat is a weather pattern!
+
+> **Every time yuh dog hear di gate open, it start bark.**
+> Dat is a behaviour pattern!
+
+When AI find patterns, it can **predict** what going happen next — just like
+how yuh know dat after Thursday come... **Friday!**
 
 ---
 
 ## 🌊 Hurricane Season Patterns
 
-Every Caribbean pickney know about hurricane season. But did yuh know it follow
-a pattern?
+Every Caribbean pickney know about hurricane season. But did yuh know it
+follow a **pattern**?
 
-- Hurricane season run from **June 1 to November 30** — EVERY year!
-- Di BUSIEST month is usually **September**
-- Hurricanes almost always form over **warm ocean water**
-- Dem usually move from **east to west** across di Caribbean
+| Month | Hurricane Activity |
+|-------|-------------------|
+| June | Season start — usually quiet |
+| July | Likkle bit more activity |
+| August | Getting busy! |
+| September | **PEAK** — di most hurricanes happen now! |
+| October | Still active, stay alert! |
+| November | Winding down |
 
-In **The Bahamas**, in **Antigua**, in **Dominica** — everybody watch di weather
-patterns carefully during hurricane season.
+**Di Pattern:** Hurricane season ramp up from June, peak in September, then
+calm down. Scientists and AI use dis pattern PLUS data from di ocean (water
+temperature, wind patterns) fi predict when and where hurricanes might hit.
 
-**AI scientists** study hurricane patterns fi help predict:
-- WHERE a hurricane might go
-- HOW STRONG it might get
-- WHEN it might reach yuh island
-
-Dat is why we get warnings days before a hurricane reach — AI help find di pattern!
-
-### Pattern Practice:
-Look at dis hurricane data:
-
-| Year | Number of Hurricanes |
-|------|---------------------|
-| 2020 | 13 |
-| 2021 | 7 |
-| 2022 | 8 |
-| 2023 | 7 |
-| 2024 | 11 |
-
-**Question fi yuh:** Is there a pattern here? (Hint: some years have more, some
-have less — but dem usually between 7 and 14!)
+**Real Caribbean Example:**
+- In **The Bahamas**, fishermen watch di clouds and water fi patterns before
+  hurricane season
+- In **Dominica**, after Hurricane Maria in 2017, scientists use AI fi study
+  patterns so dem can warn people earlier
+- In **Antigua**, di Met Office use computer patterns fi send alerts
 
 ---
 
-## 🏏 Cricket Patterns
+## 🏏 Cricket Batting Patterns
 
-In **Barbados**, cricket is LIFE! At **Kensington Oval**, fans watch every ball
-carefully. And guess what? Cricket is FULL of patterns!
+Yuh know say cricket is LIFE in Barbados, Trinidad, Guyana, and Jamaica?
+Well, AI use patterns fi study cricket too!
 
-Look at dis made-up batting record fi a West Indies player:
+Imagine yuh watching a batsman at **Kensington Oval** in Barbados:
 
-| Match | Runs Scored |
-|-------|------------|
-| Match 1 | 45 |
-| Match 2 | 52 |
-| Match 3 | 48 |
-| Match 4 | 55 |
-| Match 5 | 50 |
-| Match 6 | ? |
+| Ball Number | Where Di Batsman Hit It |
+|-------------|------------------------|
+| 1 | Left side |
+| 2 | Right side |
+| 3 | Left side |
+| 4 | Right side |
+| 5 | Left side |
+| 6 | ??? |
 
-**Can yuh see di pattern?** Di batsman usually score between 45 and 55 runs.
-So fi Match 6, yuh might predict somewhere around **50 runs**!
+**What yuh think?** If di batsman hit left, right, left, right, left...
+di next one probably going **RIGHT**!
 
-Dat is EXACTLY what AI does — it look at di past scores and predict di next one!
+Dat is how AI help cricket teams:
+- It watch HUNDREDS of innings
+- It find patterns in how batsmen play
+- It tell di bowler: "Dis batsman always play a cover drive when yuh bowl
+  outside off stump!"
 
-**In real cricket**, AI help wid:
-- Finding which bowlers a batsman struggle against
-- Predicting how many runs a team will score
-- Deciding whether fi bat or bowl first
-
----
-
-## 🚌 Bus Route Patterns (Jamaica Style)
-
-If yuh ever take di bus in Kingston, yuh know di routes follow a pattern:
-
-- Di **bus number** tell yuh where it going
-- Certain buses come at di **same times** every day
-- Di bus **always** follow di same road
-- More buses run in di **morning** and **evening** (rush hour!)
-
-AI use patterns just like dis fi help plan transportation:
-- What time fi send MORE buses (when nuff people a travel)
-- Which routes need BIGGER buses
-- Where fi put new bus stops
-
-In **Trinidad**, di maxi-taxi dem follow patterns too — certain colors go certain
-routes! Red band go east, green band go south. Dat is a pattern yuh can learn!
+**Famous Caribbean Cricketers and Patterns:**
+- **Chris Gayle** (Jamaica) — known fi hitting sixes. AI can find di pattern
+  of WHEN him most likely fi hit a six!
+- **Brian Lara** (Trinidad) — scored 400 not out! AI could study him batting
+  patterns fi teach young players
+- **Jason Holder** (Barbados) — AI can analyze him bowling patterns
 
 ---
 
-## 🛒 Market Day Patterns
+## 🚌 Bus Route Patterns
 
-Across di Caribbean, market day follow patterns:
+If yuh ever tek di bus in Kingston, Port of Spain, or Bridgetown, yuh know
+di bus have a pattern!
 
-| Island | Biggest Market Day |
-|--------|-------------------|
-| Jamaica (Coronation Market) | Saturday |
-| Guyana (Stabroek Market) | Saturday |
-| St. Lucia (Castries Market) | Saturday |
-| Grenada (St. George's Market) | Saturday |
-| Dominica (Roseau Market) | Saturday |
+**Kingston, Jamaica — Route 98 Pattern:**
+- Bus leave Half Way Tree at 7:00 AM
+- Bus reach Papine at 7:25 AM
+- Bus come back at 7:50 AM
+- Next bus leave at 8:00 AM
 
-**Yuh see di pattern?** Saturday is di big market day across MOST Caribbean
-islands! AI could look at dis data and predict dat if yuh go to ANY Caribbean
-market on Saturday, it going be BUSY!
+**Di Pattern:** Every 30 minutes, anodda bus come!
 
-But patterns go deeper than dat:
-- **Certain fruits** available only at **certain times** of year (mango season, anyone?)
-- Prices go **UP** right before holidays (Christmas, Carnival, Easter)
-- More people buy **fish** on **Fridays** (especially in Catholic communities)
+But wait — on a **Friday evening**, di bus LATE because of traffic, right?
+AI can learn DAT pattern too:
+
+| Day | Bus Usually Late? |
+|-----|------------------|
+| Monday morning | Likkle bit |
+| Tuesday morning | On time |
+| Wednesday morning | On time |
+| Thursday morning | On time |
+| Friday evening | VERY late! |
+| Saturday | Medium late |
+
+AI can use dis fi tell people: "Yo, di bus going be 20 minutes late today
+because is Friday evening rush hour!"
+
+**In Trinidad**, di maxi-taxi dem have routes too. AI could study which
+routes busiest at which time and help plan better transport!
 
 ---
 
 ## 🏃 Track and Field Patterns
 
-Jamaica is di SPRINT CAPITAL of di world! Let's look at patterns in track:
+Jamaica, Trinidad, and The Bahamas LOVE track and field!
 
-**100m Race Times (made up fi practice):**
+Look at dis pattern of a young sprinter training times (100 metres):
 
-| Race | Time (seconds) |
+| Week | Time (seconds) |
 |------|---------------|
-| Race 1 | 11.2 |
-| Race 2 | 11.0 |
-| Race 3 | 10.8 |
-| Race 4 | 10.6 |
-| Race 5 | ? |
+| Week 1 | 15.0 |
+| Week 2 | 14.5 |
+| Week 3 | 14.2 |
+| Week 4 | 13.9 |
+| Week 5 | 13.5 |
+| Week 6 | ??? |
 
-**What's di pattern?** Di time going DOWN by 0.2 seconds each race!
-So Race 5 might be **10.4 seconds**!
+**What yuh notice?** Di time getting FASTER each week by about 0.3-0.5
+seconds!
 
-AI help coaches at di **University of the West Indies** and **GC Foster College**
-analyze athlete performance patterns fi help dem train smarter.
+**Can yuh predict Week 6?** Probably around **13.1 or 13.2 seconds!**
+
+AI does exactly dis — it look at training patterns fi help coaches know:
+- When an athlete improving
+- When dem need rest (if times start getting SLOWER, dat is a pattern too!)
+- What di best training schedule look like
+
+**Shelly-Ann Fraser-Pryce** from Jamaica, **Kirani James** from Grenada, and
+**Shaunae Miller-Uibo** from The Bahamas — all dem top athletes use data
+patterns fi train smarter!
 
 ---
 
-## 🎵 Music Patterns
+## 🛒 Market Day Patterns
 
-Caribbean music is FULL of patterns!
+Across di Caribbean, different towns have market days on different days:
 
-- **Soca** from Trinidad — di beat go: BOOM-chick-BOOM-chick (repeating pattern!)
-- **Reggae** from Jamaica — di guitar go: chick-STRUM-chick-STRUM
-- **Calypso** from Trinidad — verse, chorus, verse, chorus (a pattern!)
-- **Dancehall** from Jamaica — di riddim repeat over and over
+| Day | Which Market Busy |
+|-----|------------------|
+| Monday | Falmouth Market (Jamaica) |
+| Tuesday | Scarborough Market (Tobago) |
+| Wednesday | Castries Market (Saint Lucia) |
+| Thursday | St. George's Market (Grenada) |
+| Friday | Stabroek Market extra busy (Guyana) |
+| Saturday | EVERYWHERE busy! |
+| Sunday | Most markets closed |
 
-When AI study music, it find dese patterns and can even help create NEW music
-dat sound Caribbean!
+**Pattern:** Saturday is di busiest market day everywhere! And each town have
+its own special day.
+
+If yuh was building an AI fi help market vendors:
+- It could predict how much food fi bring on each day
+- It could tell dem which items sell fastest on which day
+- It could help dem know when fi lower prices (hint: late afternoon when
+  tings need fi sell before dem spoil!)
 
 ---
 
 ## ✏️ Activity Time!
 
-### Activity 1: Pattern Spotter (On Paper)
+### Activity 1: Find Di Pattern! (Paper Activity)
 
-Complete dese Caribbean patterns in yuh notebook:
+Copy dese into yuh notebook and fill in di missing numbers:
 
-**a)** 🥭 🍌 🥭 🍌 🥭 ___ (What come next?)
+**Pattern A:** 2, 4, 6, 8, ___, ___
 
-**b)** 🇯🇲 🇹🇹 🇧🇧 🇯🇲 🇹🇹 ___ (What come next?)
+**Pattern B:** 🥭🍌🥭🍌🥭___
 
-**c)** 2, 4, 6, 8, ___, ___ (What come next?)
+**Pattern C:** The temperature in Barbados:
+- Monday: 29°C
+- Tuesday: 30°C
+- Wednesday: 31°C
+- Thursday: ___°C
 
-**d)** Monday market, skip, skip, Thursday market, skip, skip, ___ market
-(What day come next?)
+**Pattern D:** Caribbean islands by size (smallest to biggest):
+Montserrat, Dominica, Saint Lucia, Jamaica, ___
+(Hint: which big Caribbean island come next?)
 
-**e)** Cricket score: 20, 25, 30, 35, ___ (What come next?)
+### Activity 2: Yuh Own Pattern Detective (Paper Activity)
 
-### Activity 2: Make Yuh Own Pattern!
+Go outside or look through yuh window fi 10 minutes. Write down THREE
+patterns yuh notice:
 
-1. Create yuh OWN pattern using Caribbean fruits, animals, or flags
-2. Write it down but leave di last 2 BLANK
-3. Give it to a friend and see if dem can figure it out!
+1. A pattern in **nature** (clouds, birds, plants)
+2. A pattern in **people** (how dem walk, talk, or move)
+3. A pattern in **time** (what happens at certain times of day)
 
-### Activity 3: Weather Pattern Diary
+### Activity 3: Create Yuh Own Pattern!
 
-Fi ONE WEEK, write down in yuh notebook every day:
-- Was it sunny, cloudy, or rainy?
-- Was it hot, warm, or cool?
+Make up yuh own pattern using Caribbean things. Write it in yuh notebook
+and ask a friend fi guess what come next!
 
-At di end of di week, look fi patterns! Did it rain at di same time
-every day? Was morning always cooler than afternoon?
+Example: 🇯🇲 🇹🇹 🇧🇧 🇯🇲 🇹🇹 🇧🇧 🇯🇲 ___ ___
 
-### Activity 4: Di Number Pattern Game
+### Activity 4: Di Cricket Score Pattern (Paper Activity)
 
-Look at dis pattern from a Caribbean fisherman counting fish:
+A batsman score dese runs in 5 overs:
 
-> Morning catch: 12 fish
-> Afternoon catch: 8 fish
-> Next morning: 14 fish
-> Next afternoon: 10 fish
-> Next morning: 16 fish
-> Next afternoon: ??? fish
+| Over | Runs Scored |
+|------|------------|
+| 1 | 4 |
+| 2 | 8 |
+| 3 | 12 |
+| 4 | 16 |
+| 5 | ??? |
 
-**Can yuh figure out BOTH patterns?**
-(Hint: morning catches and afternoon catches have SEPARATE patterns!)
+What is di pattern? How many runs in Over 5? Write yuh answer and explain
+WHY yuh think so!
 
 ---
 
-## ⚽ Fun Fact!
+## 🇱🇨 Fun Fact!
 
-In **St. Kitts and Nevis**, sugar cane used fi be di biggest crop. Farmers
-noticed a pattern: sugar cane grow BEST when yuh plant it at certain times of
-year and harvest it at certain times. AI today can help farmers find di PERFECT
-planting and harvesting pattern fi get di most sugar cane!
-
-Same ting in **Belize** — AI help orange farmers know di best time fi pick
-oranges by studying years and years of harvest patterns.
+In **Saint Lucia**, banana farmers noticed a pattern: when certain birds show
+up in large numbers near di banana plantation, it usually mean di bananas
+nearly ripe! Scientists are now teaching AI fi recognize dese patterns from
+satellite photos, so dem can tell farmers exactly when fi harvest. Nature
+have patterns everywhere — AI just help us find dem faster!
 
 ---
 
 ## 📝 Lesson 2 Quiz
 
-Answer dese in yuh notebook, den check `quiz_answers.md` AFTER!
+Answer dese questions in yuh notebook. Check yuh answers in `quiz_answers.md`
+AFTER yuh try!
 
 **Question 1:** What is a pattern?
 - A) Something dat happen only one time
-- B) Something dat repeats or follows a rule yuh can predict
-- C) A type of Caribbean music
-- D) A drawing on fabric
+- B) Something dat repeat in a way yuh can predict
+- C) A type of Caribbean food
+- D) A colour on a flag
 
-**Question 2:** When is hurricane season in the Caribbean?
-- A) January to March
-- B) June to November
-- C) December to February
-- D) All year round
+**Question 2:** In which month do di MOST hurricanes happen in di Caribbean?
+- A) January
+- B) March
+- C) September
+- D) December
 
-**Question 3:** Look at dis pattern: 5, 10, 15, 20, ___. What come next?
-- A) 22
-- B) 30
-- C) 25
-- D) 21
+**Question 3:** A sprinter runs: 14.0 seconds, 13.5 seconds, 13.0 seconds.
+What might dem next time be?
+- A) 15.0 seconds (slower)
+- B) 13.0 seconds (same)
+- C) 12.5 seconds (faster)
+- D) 20.0 seconds (much slower)
 
-**Question 4:** Why does AI love patterns?
-- A) Because patterns are pretty
-- B) Because AI can use patterns fi predict what might happen next
-- C) Because patterns taste good
-- D) Because AI is bored
+**Question 4:** Why does AI need fi find patterns?
+- A) Because patterns look pretty
+- B) So it can predict what might happen next
+- C) Because computers like fi draw
+- D) Patterns taste good
 
-**Question 5:** A cricket batsman scores: 30, 32, 34, 36. What might he score next?
-- A) 50
-- B) 36
-- C) 38
-- D) 20
+**Question 5:** What comes next? 🏏⚽🏏⚽🏏___
+- A) 🏏 (cricket bat)
+- B) ⚽ (football)
+- C) 🎾 (tennis ball)
+- D) 🏊 (swimming)
 
 ---
 
 ## 🌟 Brilliant Work!
 
-Yuh just finish Lesson 2! Now yuh can spot patterns like a real AI!
+Yuh is a real Pattern Detective now! Yuh learn fi find patterns in weather,
+sports, buses, and markets all across di Caribbean.
 
 **Next up: Lesson 3 — Sorting and Classifying!** We going sort Caribbean
-fruits, flags, and music like a computer!
+fruits, flags, and music like a real AI!
 
 ---
 

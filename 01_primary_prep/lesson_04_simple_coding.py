@@ -1,273 +1,275 @@
-# =============================================================================
-# Lesson 4: Simple Coding — Caribbean Island Guessing Game! 🏝️
-# =============================================================================
-# Caribbean AI Curriculum — Primary/Prep School (Ages 6-11)
-# Designed by Adrian Dunkley | Adriandunkley.net | FREE
-#
-# HOW TO RUN THIS PROGRAM:
-# 1. Make sure Python is installed on yuh computer
-# 2. Open a terminal (command prompt)
-# 3. Type: python lesson_04_simple_coding.py
-# 4. Follow di instructions on screen!
-#
-# WHAT THIS PROGRAM DOES:
-# It gives yuh clues about a Caribbean island, and yuh have to guess
-# which island it is! Just like how AI uses clues (data) to figure
-# things out!
-#
+"""
+=============================================================
+  Lesson 4: Simple Coding — Caribbean Island Guessing Game!
+=============================================================
+
+  Caribbean AI Curriculum — Primary/Prep School (Ages 6-11)
+  Designed by Adrian Dunkley | Adriandunkley.net | FREE
+
+  HOW TO RUN THIS PROGRAM:
+  1. Make sure Python is installed on yuh computer
+  2. Open a terminal (command prompt)
+  3. Type: python lesson_04_simple_coding.py
+  4. Follow di instructions on screen!
+
+  WHAT THIS PROGRAM DOES:
+  - It give yuh clues about a Caribbean island
+  - Yuh try fi guess which island it is!
+  - Yuh get 3 tries fi each island
+  - At di end, yuh see yuh score!
+"""
+
 # 🧩 Puzzle Piece 1/12: The first word starts with a color found in traffic lights and Jamaican flag
-# =============================================================================
 
-# --- We start by printing a welcome message ---
-# "print" means "show dis on the screen"
-print("=" * 60)
+# ============================================================
+# STEP 1: We create a welcome message!
+# "print" means "show dis on di screen"
+# ============================================================
+
+print("=" * 55)
 print("  WELCOME TO DI CARIBBEAN ISLAND GUESSING GAME!")
-print("  Caribbean AI Curriculum — Lesson 4")
-print("  Designed by Adrian Dunkley | Adriandunkley.net | FREE")
-print("=" * 60)
+print("  =============================================")
 print()
-print("Wah gwaan! Mi going give yuh clues about a Caribbean island.")
-print("Yuh job is fi guess which island it is!")
-print("Yuh get 3 clues fi each island. Try fi guess early!")
+print("  Designed by Adrian Dunkley | Adriandunkley.net")
+print("  Caribbean AI Curriculum — FREE fi everyone!")
+print()
+print("  I going give yuh clues about Caribbean islands.")
+print("  Yuh job is fi guess which island it is!")
+print("  Yuh get 3 tries fi each island. Good luck!")
+print("=" * 55)
 print()
 
-# --- This variable keeps track of yuh score ---
-# A "variable" is like a box dat holds a number or word
-score = 0
+# ============================================================
+# STEP 2: We set up di score counter
+# A "variable" is like a box dat hold a value
+# We start wid 0 points
+# ============================================================
 
-# --- This variable tracks how many questions we ask ---
-total_questions = 0
+score = 0  # Dis hold how many islands yuh guess correctly
+total_islands = 5  # We have 5 islands fi guess
 
-# =============================================
-# ISLAND 1: JAMAICA
-# =============================================
+# ============================================================
+# STEP 3: We ask di player if dem ready!
+# "input" means "wait fi di person fi type something"
+# ============================================================
+
+player_name = input("First, tell mi yuh name: ")
+print()
+print(f"Nice fi meet yuh, {player_name}! Let's start!")
+print()
+
+# ============================================================
+# ISLAND 1: Jamaica
+# ============================================================
+
 print("-" * 40)
 print("ISLAND #1")
 print("-" * 40)
-
-# Clue 1
-print("Clue 1: Dis island is famous fi sprinting — Usain Bolt come from here!")
-guess = input("Yuh guess? (type di island name): ")
-
-# "if" checks if something is true
-# ".lower()" makes everything lowercase so "Jamaica" and "jamaica" both work
-# ".strip()" removes extra spaces
-if guess.lower().strip() == "jamaica":
-    print("YES! Yuh get it on di first clue! Amazing! +3 points!")
-    score = score + 3
-else:
-    # If dem never get it, give another clue
-    print("Not quite! Here is another clue...")
-    print("Clue 2: Dis island is home to reggae music and Bob Marley!")
-    guess = input("Yuh guess? (type di island name): ")
-
-    if guess.lower().strip() == "jamaica":
-        print("YES! Yuh get it! Nice! +2 points!")
-        score = score + 2
-    else:
-        print("One more clue!")
-        print("Clue 3: Di national dish is ackee and saltfish!")
-        guess = input("Yuh guess? (type di island name): ")
-
-        if guess.lower().strip() == "jamaica":
-            print("Yuh get it! +1 point!")
-            score = score + 1
-        else:
-            print("Di answer was JAMAICA! No worries, keep trying!")
-
-total_questions = total_questions + 1
+print()
+print("CLUE 1: Dis island is home to di fastest man in di world — Usain Bolt!")
+print("CLUE 2: Dem famous fi reggae music and Bob Marley.")
+print("CLUE 3: Di capital city is Kingston.")
 print()
 
-# =============================================
-# ISLAND 2: TRINIDAD AND TOBAGO
-# =============================================
+# We give di player 3 tries
+tries = 3
+got_it = False  # Dis keep track of whether dem guess right
+
+while tries > 0 and not got_it:
+    guess = input(f"What island is it? ({tries} tries left): ")
+
+    # We use .lower() and .strip() fi handle different ways people type
+    # "Jamaica", "jamaica", "JAMAICA", " jamaica " all work!
+    if guess.lower().strip() == "jamaica":
+        print("YES! Yuh get it! Big up yuhself! 🇯🇲")
+        print()
+        score = score + 1  # Add 1 to di score
+        got_it = True
+    else:
+        tries = tries - 1  # Lose one try
+        if tries > 0:
+            print(f"Nah, try again! Yuh have {tries} tries left.")
+        else:
+            print("Di answer was JAMAICA! No worries, let's keep going!")
+    print()
+
+# ============================================================
+# ISLAND 2: Trinidad and Tobago
+# ============================================================
+
 print("-" * 40)
 print("ISLAND #2")
 print("-" * 40)
-
-print("Clue 1: Dis country is famous fi Carnival — di biggest party in di Caribbean!")
-guess = input("Yuh guess? (type di country name): ")
-
-# We check for different ways people might type it
-answer = guess.lower().strip()
-if answer == "trinidad" or answer == "trinidad and tobago" or answer == "trinidad & tobago":
-    print("YES! First clue! Brilliant! +3 points!")
-    score = score + 3
-else:
-    print("Not yet! Try again...")
-    print("Clue 2: Steelpan (steel drum) was invented here!")
-    guess = input("Yuh guess? ")
-    answer = guess.lower().strip()
-
-    if answer == "trinidad" or answer == "trinidad and tobago" or answer == "trinidad & tobago":
-        print("Correct! +2 points!")
-        score = score + 2
-    else:
-        print("Last clue!")
-        print("Clue 3: Doubles (a famous street food wid channa) come from here!")
-        guess = input("Yuh guess? ")
-        answer = guess.lower().strip()
-
-        if answer == "trinidad" or answer == "trinidad and tobago" or answer == "trinidad & tobago":
-            print("Yuh get it! +1 point!")
-            score = score + 1
-        else:
-            print("Di answer was TRINIDAD AND TOBAGO! Yuh go get di next one!")
-
-total_questions = total_questions + 1
+print()
+print("CLUE 1: Dis country is TWO islands together!")
+print("CLUE 2: Dem famous fi Carnival — one of di biggest parties in di world!")
+print("CLUE 3: Steelpan music was invented here.")
 print()
 
-# =============================================
-# ISLAND 3: BARBADOS
-# =============================================
+tries = 3
+got_it = False
+
+while tries > 0 and not got_it:
+    guess = input(f"What island is it? ({tries} tries left): ")
+
+    # We accept different ways fi write it
+    answer = guess.lower().strip()
+    if answer in ["trinidad", "tobago", "trinidad and tobago",
+                   "trinidad & tobago", "trinidad and tobago",
+                   "t&t", "trini"]:
+        print("YES! Trini to di bone! Big up! 🇹🇹")
+        print()
+        score = score + 1
+        got_it = True
+    else:
+        tries = tries - 1
+        if tries > 0:
+            print(f"Nah, try again! Yuh have {tries} tries left.")
+        else:
+            print("Di answer was TRINIDAD AND TOBAGO! On to di next one!")
+    print()
+
+# ============================================================
+# ISLAND 3: Barbados
+# ============================================================
+
 print("-" * 40)
 print("ISLAND #3")
 print("-" * 40)
-
-print("Clue 1: Dis island is known as 'di land of di flying fish!'")
-guess = input("Yuh guess? ")
-
-if guess.lower().strip() == "barbados":
-    print("YES! First try! +3 points!")
-    score = score + 3
-else:
-    print("Nah, try again!")
-    print("Clue 2: Rihanna was born on dis island!")
-    guess = input("Yuh guess? ")
-
-    if guess.lower().strip() == "barbados":
-        print("Correct! +2 points!")
-        score = score + 2
-    else:
-        print("One more!")
-        print("Clue 3: Kensington Oval, a famous cricket ground, is here!")
-        guess = input("Yuh guess? ")
-
-        if guess.lower().strip() == "barbados":
-            print("Yuh get it! +1 point!")
-            score = score + 1
-        else:
-            print("Di answer was BARBADOS!")
-
-total_questions = total_questions + 1
+print()
+print("CLUE 1: Dis island is known as 'Little England.'")
+print("CLUE 2: Singer Rihanna was born here!")
+print("CLUE 3: Dem LOVE cricket — Kensington Oval is der famous ground.")
 print()
 
-# =============================================
-# ISLAND 4: THE BAHAMAS
-# =============================================
+tries = 3
+got_it = False
+
+while tries > 0 and not got_it:
+    guess = input(f"What island is it? ({tries} tries left): ")
+
+    answer = guess.lower().strip()
+    if answer in ["barbados", "bim", "bimshire"]:
+        print("YES! Correct! Bim represent! 🇧🇧")
+        print()
+        score = score + 1
+        got_it = True
+    else:
+        tries = tries - 1
+        if tries > 0:
+            print(f"Nah, try again! Yuh have {tries} tries left.")
+        else:
+            print("Di answer was BARBADOS! Keep going, yuh doing great!")
+    print()
+
+# ============================================================
+# ISLAND 4: Grenada
+# ============================================================
+
 print("-" * 40)
 print("ISLAND #4")
 print("-" * 40)
+print()
+print("CLUE 1: Dis island is called 'Di Spice Isle.'")
+print("CLUE 2: Nutmeg is on di flag!")
+print("CLUE 3: Olympic champion Kirani James is from here.")
+print()
 
-print("Clue 1: Dis country has over 700 islands and cays!")
-guess = input("Yuh guess? ")
+tries = 3
+got_it = False
 
-answer = guess.lower().strip()
-if answer == "bahamas" or answer == "the bahamas":
-    print("First clue! Yuh smart! +3 points!")
-    score = score + 3
-else:
-    print("Not yet!")
-    print("Clue 2: Nassau is di capital, and Junkanoo is di famous festival!")
-    guess = input("Yuh guess? ")
+while tries > 0 and not got_it:
+    guess = input(f"What island is it? ({tries} tries left): ")
+
     answer = guess.lower().strip()
-
-    if answer == "bahamas" or answer == "the bahamas":
-        print("Nice one! +2 points!")
-        score = score + 2
+    if answer in ["grenada", "grenade", "spice isle"]:
+        print("YES! Spice Isle massive! Well done! 🇬🇩")
+        print()
+        score = score + 1
+        got_it = True
     else:
-        print("Last chance!")
-        print("Clue 3: It famous fi conch salad, pink sand beaches, and swimming pigs!")
-        guess = input("Yuh guess? ")
-        answer = guess.lower().strip()
+        tries = tries - 1
+        if tries > 0:
+            print(f"Nah, try again! Yuh have {tries} tries left.")
+        else:
+            print("Di answer was GRENADA! One more island to go!")
+    print()
 
-        if answer == "bahamas" or answer == "the bahamas":
-            print("Yuh get it! +1 point!")
-            score = score + 1
+# ============================================================
+# ISLAND 5: The Bahamas
+# ============================================================
+
+print("-" * 40)
+print("ISLAND #5 — LAST ONE!")
+print("-" * 40)
+print()
+print("CLUE 1: Dis country have OVER 700 islands!")
+print("CLUE 2: Di water so clear yuh can see straight to di bottom.")
+print("CLUE 3: Olympic sprinter Shaunae Miller-Uibo is from here.")
+print()
+
+tries = 3
+got_it = False
+
+while tries > 0 and not got_it:
+    guess = input(f"What island is it? ({tries} tries left): ")
+
+    answer = guess.lower().strip()
+    if answer in ["bahamas", "the bahamas", "bahamaland"]:
+        print("YES! Bahamas massive! Yuh a real Caribbean expert! 🇧🇸")
+        print()
+        score = score + 1
+        got_it = True
+    else:
+        tries = tries - 1
+        if tries > 0:
+            print(f"Nah, try again! Yuh have {tries} tries left.")
         else:
             print("Di answer was THE BAHAMAS!")
+    print()
 
-total_questions = total_questions + 1
+# ============================================================
+# STEP 4: Show di final score!
+# ============================================================
+
+print("=" * 55)
+print(f"  GAME OVER, {player_name}!")
+print(f"  Yuh scored {score} out of {total_islands} islands!")
 print()
 
-# =============================================
-# ISLAND 5: GRENADA
-# =============================================
-print("-" * 40)
-print("ISLAND #5")
-print("-" * 40)
-
-print("Clue 1: Dis island is called 'The Spice Isle' because it grows")
-print("         nutmeg, cinnamon, cloves, and more!")
-guess = input("Yuh guess? ")
-
-if guess.lower().strip() == "grenada":
-    print("Yes! Yuh on FIRE! +3 points!")
-    score = score + 3
+# We use if/elif/else fi give different messages based on di score
+# Dis is like simple AI — di computer DECIDE what fi say!
+if score == 5:
+    print("  PERFECT SCORE! Yuh is a CARIBBEAN CHAMPION! 🏆")
+    print("  Yuh know yuh islands like di back of yuh hand!")
+elif score >= 3:
+    print("  GREAT JOB! Yuh know yuh Caribbean geography well! 🌟")
+    print("  Keep learning and yuh going get perfect next time!")
+elif score >= 1:
+    print("  GOOD TRY! Yuh getting there! 📚")
+    print("  Read up on yuh Caribbean islands and try again!")
 else:
-    print("Not quite!")
-    print("Clue 2: Yuh can find a nutmeg right on di national flag!")
-    guess = input("Yuh guess? ")
-
-    if guess.lower().strip() == "grenada":
-        print("Correct! +2 points!")
-        score = score + 2
-    else:
-        print("One more clue!")
-        print("Clue 3: Di capital is St. George's, and 'Oil Down' is di national dish!")
-        guess = input("Yuh guess? ")
-
-        if guess.lower().strip() == "grenada":
-            print("Yuh get it! +1 point!")
-            score = score + 1
-        else:
-            print("Di answer was GRENADA!")
-
-total_questions = total_questions + 1
-print()
-
-# =============================================
-# FINAL SCORE
-# =============================================
-# Now we calculate and show di final score!
-# Di maximum possible score is 15 (3 points x 5 islands)
-
-print("=" * 60)
-print("  GAME OVER! Let's see how yuh do!")
-print("=" * 60)
-print()
-print("Yuh score: " + str(score) + " out of 15!")
-print()
-
-# We use "if/elif/else" to give different messages based on the score
-# "elif" is short for "else if"
-if score >= 13:
-    print("🌟 CARIBBEAN CHAMPION! Yuh know yuh islands inside out!")
-    print("   Yuh could teach AI about di Caribbean!")
-elif score >= 9:
-    print("🏆 GREAT JOB! Yuh know nuff about di Caribbean!")
-    print("   Keep learning and yuh will be a champion!")
-elif score >= 5:
-    print("👍 GOOD EFFORT! Yuh learning!")
-    print("   Read up on yuh Caribbean islands and try again!")
-else:
-    print("📚 KEEP TRYING! Every expert was once a beginner!")
-    print("   Ask yuh teacher or parents about di Caribbean islands!")
+    print("  NO WORRIES! Every expert was a beginner once! 💪")
+    print("  Study yuh Caribbean islands and come back stronger!")
 
 print()
-print("-" * 60)
-print("WHAT YUH JUST LEARNED:")
-print("-" * 60)
-print("1. 'print' shows a message on di screen")
-print("2. 'input' lets di computer ask yuh a question")
-print("3. 'if/else' lets di computer make DECISIONS (like AI!)")
-print("4. Variables (like 'score') store information")
-print("5. Di computer checks yuh answer against di correct one")
+print("  Thank yuh fi playing! 🌴")
+print("  Remember: coding is FUN and yuh can do ANYTHING wid it!")
 print()
-print("Dis is how AI works at a basic level:")
-print("  INPUT (yuh guess) -> PROCESS (check if correct) -> OUTPUT (response)")
-print()
-print("=" * 60)
-print("  Caribbean AI Curriculum — Designed by Adrian Dunkley")
-print("  Adriandunkley.net | FREE fi everyone")
-print("=" * 60)
+print("  Caribbean AI Curriculum")
+print("  Designed by Adrian Dunkley | Adriandunkley.net | FREE")
+print("=" * 55)
+
+# ============================================================
+# WHAT YUH LEARNED IN DIS LESSON:
+# ============================================================
+# 1. print() — shows text on di screen
+# 2. input() — lets di user type something
+# 3. Variables — boxes dat hold values (like "score" and "tries")
+# 4. if/elif/else — di computer makes decisions (like simple AI!)
+# 5. while loops — doing something over and over until a condition met
+# 6. .lower() and .strip() — cleaning up text so di computer understand it
+#
+# DESE ARE DI BUILDING BLOCKS OF AI!
+# AI programs use all dese same tools, just in bigger, fancier ways.
+# ============================================================

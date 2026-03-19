@@ -1,321 +1,292 @@
-# Lesson 3: Sorting and Classifying! 📦🌴
+# Lesson 3: Sorting and Classifying! 🍎🏷️🌴
 
 ### Caribbean AI Curriculum — Primary/Prep School (Ages 6-11)
 ### Designed by **Adrian Dunkley** | [Adriandunkley.net](https://Adriandunkley.net) | **FREE**
 
 ---
 
-## Wah Gwaan, Sorting Superstars!
+## Wha' Gwan, Sorting Superstars!
 
-Today we going learn fi **sort** and **classify** tings — one of di MOST
-important skills in all of AI!
+Alright, so yuh already know what AI is (Lesson 1) and how fi find patterns
+(Lesson 2). Now we going learn one of di MOST important tings dat AI does
+every single day — **sorting and classifying**!
 
-When yuh sort yuh crayons by color? Dat is classification!
-When yuh put yuh big books on one shelf and small books on another? Dat too!
+> **Sorting** = putting tings in order
+> **Classifying** = putting tings into groups
 
-AI does di same ting — but wid MILLIONS of tings at once!
+Yuh do dis all di time without even thinking! When yuh put yuh shoes in one
+place and yuh books in another — dat is sorting. When yuh say "dat is a
+fruit" and "dat is a vegetable" — dat is classifying!
 
----
-
-## 🤔 What is Sorting and Classifying?
-
-**Sorting** = putting tings in ORDER (smallest to biggest, A to Z, etc.)
-
-**Classifying** = putting tings into GROUPS based on what dem have in common
-
-> **Think about it:** Yuh grandmother going market and she come back wid a big
-> bag of tings. She sort di tings: fruits in one place, vegetables in another,
-> fish in di fridge. Dat is CLASSIFYING!
-
-AI do dis ALL di time:
-- Email apps classify messages as "Important" or "Spam"
-- Phone photos app sort yuh pictures by faces
-- Music apps classify songs into genres
+AI do di same ting, but wid MILLIONS of tings at a time!
 
 ---
 
 ## 🥭 Sorting Caribbean Fruits
 
-Let's sort some Caribbean fruits! Here dem is:
+Imagine yuh at **Cheapside Market** in Bridgetown, Barbados, and yuh
+grandma tell yuh fi sort di fruits. Here are di fruits yuh have:
 
 **Ackee** | **Soursop** | **Guinep** | **Julie Mango** | **Breadfruit** |
-**Naseberry** | **Star Apple** | **June Plum** | **Otaheite Apple** |
-**Coconut** | **Papaya** | **Sugar Cane**
+**Star Apple** | **Naseberry** | **June Plum** | **Sweetsop** | **Tamarind**
 
-### Sort by SIZE (small to big):
+### Sort by SIZE (Small to Big):
 
-| Small | Medium | Large |
-|-------|--------|-------|
+| Small | Medium | Big |
+|-------|--------|-----|
 | Guinep | Julie Mango | Breadfruit |
-| Naseberry | Ackee | Coconut |
-| June Plum | Soursop | Papaya |
-| Star Apple | Otaheite Apple | Sugar Cane (long!) |
+| Tamarind | Star Apple | Soursop |
+| June Plum | Ackee | |
+| Naseberry | Sweetsop | |
 
-### Sort by COLOR (when ripe):
+### Sort by COLOUR (When Ripe):
 
-| Red/Pink | Yellow/Orange | Green/Brown |
-|----------|---------------|-------------|
-| Ackee (inside) | Julie Mango | Soursop |
-| Otaheite Apple | Papaya | Guinep |
-| Star Apple (inside) | Naseberry (brown) | Breadfruit |
-| | June Plum | Coconut |
+| Green | Yellow/Orange | Purple/Brown |
+|-------|---------------|-------------|
+| Breadfruit | Julie Mango | Star Apple |
+| Guinep | Ackee (inside red) | Naseberry |
+| Soursop | June Plum | Tamarind |
+| Sweetsop | | |
 
-**See how di SAME fruit can go in DIFFERENT groups depending on di RULE?**
-Dat is important in AI — di **rule** yuh choose changes di classification!
+### Sort by TASTE:
 
----
+| Sweet | Sour/Tangy | Mild/Starchy |
+|-------|-----------|-------------|
+| Julie Mango | June Plum | Breadfruit |
+| Sweetsop | Tamarind | |
+| Naseberry | Guinep (sweet-sour!) | |
+| Star Apple | | |
 
-## 🏁 Sorting Caribbean Flags by Color
-
-Caribbean flags are beautiful! Let's classify dem by which colors dem have:
-
-### Flags wid BLUE:
-
-| Country | Flag Colors |
-|---------|------------|
-| 🇧🇸 The Bahamas | Blue, yellow, black |
-| 🇧🇧 Barbados | Blue, yellow (wid trident) |
-| 🇧🇿 Belize | Blue, red, white |
-| 🇦🇬 Antigua & Barbuda | Red, blue, black, yellow, white |
-| 🇱🇨 Saint Lucia | Blue, yellow, black, white |
-
-### Flags wid GREEN:
-
-| Country | Flag Colors |
-|---------|------------|
-| 🇯🇲 Jamaica | Green, gold, black |
-| 🇬🇾 Guyana | Green, red, black, yellow, white |
-| 🇩🇲 Dominica | Green, red, yellow, black, white (wid parrot!) |
-| 🇰🇳 St. Kitts & Nevis | Green, red, yellow, black, white |
-| 🇻🇨 St. Vincent | Blue, yellow, green |
-| 🇬🇩 Grenada | Red, yellow, green |
-
-**AI FACT:** Computers can classify THOUSANDS of flags in seconds by analyzing
-di colors, shapes, and symbols in each one!
+**Dat is EXACTLY what AI does!** When yuh upload a photo fi Google or
+Instagram, AI sort and classify di image: "Is dis a dog? A cat? A person?
+A mango?" It learned from seeing millions of examples!
 
 ---
 
-## 🎶 Classifying Caribbean Music
+## 🏁 Classifying Caribbean Flags by Colour
 
-Caribbean music is AMAZING and diverse! Let's classify it:
+Every Caribbean country have a beautiful flag. Let's classify dem by which
+colours dem have!
 
-### By Country of Origin:
+### Flags with **BLACK** in dem:
+- 🇯🇲 Jamaica (black, green, gold)
+- 🇹🇹 Trinidad & Tobago (black, red, white)
+- 🇧🇸 The Bahamas (black, aquamarine, gold)
+- 🇦🇬 Antigua & Barbuda (black, red, blue, gold, white)
+- 🇧🇧 Barbados (blue, gold — wid a black trident!)
+- 🇰🇳 St. Kitts & Nevis (black, green, red, yellow, white)
 
-| Country | Music Genres |
-|---------|-------------|
+### Flags with **GREEN** in dem:
+- 🇯🇲 Jamaica
+- 🇬🇾 Guyana (green, red, black, yellow, white)
+- 🇩🇲 Dominica (green, red, yellow, black, white — plus a parrot!)
+- 🇻🇨 St. Vincent (blue, yellow, green)
+- 🇰🇳 St. Kitts & Nevis
+- 🇬🇩 Grenada (green, red, yellow — wid a nutmeg!)
+
+### Flags with a **SPECIAL SYMBOL**:
+- 🇧🇧 Barbados — Trident (fi di sea god Neptune!)
+- 🇩🇲 Dominica — Sisserou Parrot
+- 🇬🇩 Grenada — Nutmeg (because dem is di Spice Isle!)
+- 🇦🇬 Antigua — Rising Sun
+
+**See how one flag can be in MULTIPLE groups?** Jamaica flag have black AND
+green, so it show up in both lists. AI does dis too — one photo of a beach
+could be classified as "beach," "ocean," "sand," AND "vacation" all at once!
+
+---
+
+## 🎵 Classifying Caribbean Music
+
+Di Caribbean have some of di BEST music in di whole world! Let's classify it!
+
+### By COUNTRY of Origin:
+
+| Country | Music Style |
+|---------|------------|
 | Jamaica | Reggae, Dancehall, Ska, Mento |
 | Trinidad & Tobago | Soca, Calypso, Chutney, Steelpan |
 | Barbados | Spouge, Tuk Band |
 | Cuba | Salsa, Son, Rumba |
 | Dominican Republic | Merengue, Bachata |
-| Haiti | Kompa |
+| Haiti | Kompa (Compas) |
 | Puerto Rico | Reggaeton, Bomba, Plena |
 
-### By Speed (Tempo):
+### By SPEED (Slow to Fast):
 
-| Slow | Medium | Fast |
-|------|--------|------|
+| Slow & Chill | Medium Vibes | Fast & Jumpy! |
+|-------------|-------------|---------------|
 | Reggae | Calypso | Soca |
-| Bachata | Mento | Dancehall |
-| Kompa | Ska | Merengue |
+| Mento | Ska | Dancehall |
+| Bachata | Kompa | Merengue |
+| | Son | Reggaeton |
 
-### By Main Instrument:
+### By INSTRUMENTS Used:
 
-| Drums/Percussion | Guitar/Strings | Steel Pan |
-|------------------|----------------|-----------|
-| Dancehall | Reggae | Calypso (sometimes) |
-| Kompa | Bachata | Soca (sometimes) |
-| Merengue | Mento | Panorama! |
+| Drums Heavy | Guitar Heavy | Horns/Brass | Steel Pan |
+|-------------|-------------|-------------|-----------|
+| Dancehall | Reggae | Ska | Calypso |
+| Soca | Bachata | Merengue | Soca |
+| Kompa | Mento | Salsa | Panorama tunes |
 
-**Look:** Di same music can be in DIFFERENT groups depending on HOW yuh classify
-it! Soca is from Trinidad AND it is fast AND it sometimes use steel pan.
-AI has fi decide WHICH rule fi use fi classify!
-
----
-
-## 🐟 Sorting Fish at Di Market
-
-In **Nassau, Bahamas** at Potter's Cay, or in **Bridgetown, Barbados** at di
-fish market, fishermen sort dem catch!
-
-### Sort by Type:
-
-| Reef Fish | Deep Sea Fish | Shellfish |
-|-----------|---------------|-----------|
-| Snapper | Tuna | Lobster |
-| Parrotfish | Mahi-mahi | Conch |
-| Grouper | Wahoo | Shrimp |
-| Doctorfish | Marlin | Crab |
-
-### Sort by Size:
-
-| Small (under 1 ft) | Medium (1-3 ft) | Large (over 3 ft) |
-|--------------------|-----------------|-------------------|
-| Shrimp | Snapper | Tuna |
-| Small fry | Grouper | Marlin |
-| Sprat | Parrotfish | Wahoo |
-
-AI help fishing boats in di Caribbean by:
-- Classifying fish from underwater camera pictures
-- Sorting which areas have which types of fish
-- Predicting which fish will be in season
+**AI fi Music:** Spotify and Apple Music use AI fi classify every song by
+tempo (speed), instruments, mood, and more. Dat is how dem recommend new
+songs yuh might like! If yuh listen to nuff Soca, di AI learn: "Dis
+person like fast Caribbean music" and suggest more Soca or Dancehall!
 
 ---
 
-## 🏅 Sports Classification
+## ⚽ Classifying Caribbean Sports Stars
 
-Let's classify Caribbean sports!
+Let's sort famous Caribbean athletes by sport!
 
-### By Type:
+### Track & Field (Running):
+- Usain Bolt (Jamaica) — Fastest man ever!
+- Shelly-Ann Fraser-Pryce (Jamaica) — Fastest woman!
+- Kirani James (Grenada) — 400m Olympic champion
+- Shaunae Miller-Uibo (Bahamas) — 400m Olympic champion
 
-| Team Sports | Individual Sports | Water Sports |
-|-------------|-------------------|-------------|
-| Cricket | Track & Field | Swimming |
-| Football (Soccer) | Boxing | Surfing |
-| Netball | Tennis | Sailing |
-| Basketball | Cycling | Diving |
+### Cricket:
+- Chris Gayle (Jamaica) — Six-hitting king
+- Brian Lara (Trinidad) — Scored 400 not out!
+- Jason Holder (Barbados) — All-rounder legend
+- Darren Sammy (Saint Lucia) — World Cup winning captain
 
-### By Where Dem Popular:
+### Football (Soccer):
+- Dwight Yorke (Trinidad & Tobago) — Premier League star
+- Raheem Sterling (Jamaica heritage) — Man City/Chelsea star
+- Leon Bailey (Jamaica) — Aston Villa flyer
 
-| Sport | Most Popular In |
-|-------|----------------|
-| Cricket | Barbados, Jamaica, Trinidad, Guyana |
-| Track & Field | Jamaica (Sprint capital!), Trinidad |
-| Football | Trinidad, Jamaica, Haiti |
-| Sailing | Antigua (Sailing Week!), BVI |
-| Boxing | Cuba, Puerto Rico |
-| Netball | Jamaica (Sunshine Girls!) |
+**AI in Sports:** AI can classify which TYPE of athlete someone is:
+- Power sprinter vs. endurance runner
+- Aggressive batsman vs. defensive batsman
+- Striker vs. midfielder vs. defender
 
-AI help Caribbean athletes by classifying dem training data — sorting GOOD
-technique from BAD technique, fast times from slow times, and finding what
-makes di difference!
+Coaches use AI fi figure out which position best fi each player!
 
 ---
 
 ## ✏️ Activity Time!
 
-### Activity 1: Fruit Sorting Game (On Paper)
+### Activity 1: Sort Di Caribbean Fruits! (Paper Activity)
 
-Draw or write dese fruits and sort dem into THREE groups. YOU decide di rule!
+Draw or write dese 8 fruits on small pieces of paper (or in yuh notebook):
 
-**Fruits:** Mango, Banana, Guinep, Coconut, Pineapple, Breadfruit, Cherry,
-Lime, Orange, Grapefruit
+**Mango | Coconut | Banana | Papaya | Lime | Guava | Pineapple | Cherry**
 
-Write down:
-1. What is yuh rule? (size? color? taste? shape?)
-2. What are yuh three groups?
-3. Where each fruit go?
+Now sort dem THREE different ways:
+1. By **size** (smallest to biggest)
+2. By **colour** when ripe
+3. By whether yuh **like dem or nah** (yuh own preference!)
 
-Now try AGAIN wid a DIFFERENT rule! See how di groups change?
+Write yuh sorting in yuh notebook.
 
-### Activity 2: Classify Yuh Classmates!
+### Activity 2: Flag Sorting Game (Paper Activity)
 
-(Dis is a fun group activity!)
+Draw di flags of 5 Caribbean countries (use colored pencils!):
+- Jamaica, Trinidad, Barbados, Guyana, Bahamas
 
-Sort yuh classmates into groups by:
-- **Favorite sport** (cricket, football, track, netball, other)
-- **Favorite subject** (math, English, science, art, PE)
-- **Favorite Caribbean food** (rice and peas, roti, bake and saltfish, etc.)
+Now create a chart and sort dem by:
+1. Which ones have **blue** in dem?
+2. Which ones have **gold/yellow** in dem?
+3. Which ones have **stripes**?
 
-Make a chart on di board or on paper!
+### Activity 3: Music Classification (Paper Activity)
 
-### Activity 3: Di Sorting Hat (Caribbean Style!)
+Ask yuh teacher or parent fi play short clips of dese music types:
+- Reggae
+- Soca
+- Calypso
+- Dancehall
 
-Create yuh own "Sorting System" on paper:
+In yuh notebook, classify each one as:
+- Fast or Slow?
+- Makes yuh want fi dance or fi relax?
+- Loud instruments or soft instruments?
 
-1. Pick a topic (animals, foods, songs, anything!)
-2. Write down 10 items
-3. Think of 3 YES/NO questions dat help yuh sort dem
+### Activity 4: Sort Yuh Classroom!
 
-**Example fi Caribbean Animals:**
-- Question 1: Does it live in water? (YES = Group A, NO = keep going)
-- Question 2: Can it fly? (YES = Group B, NO = keep going)
-- Question 3: Is it bigger than a cat? (YES = Group C, NO = Group D)
+Look around yuh classroom (or yuh room at home). Pick 10 objects and sort
+dem TWO different ways. Write it in yuh notebook!
 
-Now sort: Sea turtle, Parrot, Iguana, Dolphin, Hummingbird, Manatee,
-Doctor bird, Agouti, Flying fish, Mongoose
+Example ways fi sort:
+- By colour
+- By size
+- By what it made of (wood, plastic, metal, paper)
+- By what yuh use it for (writing, reading, playing)
 
-**Dis is EXACTLY how AI decision trees work!**
+### Activity 5: Di Human Sorting Machine
 
-### Activity 4: Caribbean Food Classification
+Play dis game wid yuh classmates:
+1. Di teacher call out a category: "Sort yuhselves by HEIGHT — shortest
+   to tallest!"
+2. Everyone line up in order
+3. Try again: "Sort by BIRTHDAY MONTH — January to December!"
+4. And again: "Sort by FIRST LETTER OF YUH NAME — A to Z!"
 
-Sort dese Caribbean dishes by COUNTRY:
-
-| Dish | Country? |
-|------|----------|
-| Ackee and Saltfish | |
-| Doubles | |
-| Cou-cou and Flying Fish | |
-| Pepperpot | |
-| Conch Fritters | |
-| Jerk Chicken | |
-| Pelau | |
-| Oil Down | |
-| Roti (Dhalpuri) | |
-| Bake and Shark | |
-
-(Hint: Jamaica, Trinidad, Barbados, Guyana, Bahamas, Grenada!)
+Yuh just acted like a sorting AI!
 
 ---
 
-## 🇱🇨 Fun Fact!
+## 🇻🇨 Fun Fact!
 
-In **Saint Lucia**, farmers grow NUFF bananas fi export. AI help dem classify
-bananas into grades:
-- **Grade A** — perfect, ready fi ship overseas
-- **Grade B** — small bruise, sell locally
-- **Grade C** — too damaged, use fi banana bread or compost
-
-Di AI look at photos of each banana bunch and classify dem in SECONDS!
-Before AI, workers had fi check EVERY bunch by hand!
+In **St. Vincent and the Grenadines**, farmers grow arrowroot — a special
+plant used fi make starch. Di arrowroot have fi be sorted by QUALITY
+before it can be sold. Traditionally, workers sort it by hand, looking at
+each piece carefully. Now, scientists working on AI dat can take a photo of
+di arrowroot and sort it automatically — good quality in one pile, not-so-good
+in another. Dis could help St. Vincent farmers save time and sell more!
 
 ---
 
 ## 📝 Lesson 3 Quiz
 
-Answer dese in yuh notebook, den check `quiz_answers.md` AFTER!
+Answer dese questions in yuh notebook. Check yuh answers in `quiz_answers.md`
+AFTER yuh try!
 
-**Question 1:** What does "classifying" mean?
-- A) Throwing tings away
-- B) Putting tings into groups based on what dem have in common
-- C) Counting tings
-- D) Breaking tings apart
+**Question 1:** What is di difference between sorting and classifying?
+- A) Dem is di exact same ting
+- B) Sorting is putting tings in order; classifying is putting tings into groups
+- C) Sorting is fi fruits only; classifying is fi animals only
+- D) Dem not related to AI
 
-**Question 2:** If yuh sorting Caribbean fruits by COLOR, where would a ripe
-Julie Mango go?
-- A) Green group
-- B) Blue group
-- C) Yellow/Orange group
-- D) Purple group
+**Question 2:** If yuh sorting mangoes by size, which group would a guinep
+go in?
+- A) Big
+- B) Medium
+- C) Small
+- D) Guinep is not a fruit
 
-**Question 3:** Why can di same thing end up in DIFFERENT groups?
-- A) Because it keep changing
-- B) Because di sorting rule yuh use changes di groups
-- C) Because di computer make a mistake
-- D) Because it nuh belong anywhere
+**Question 3:** Which Caribbean country is known as "Di Spice Isle"?
+- A) Jamaica
+- B) Barbados
+- C) Grenada
+- D) Trinidad
 
-**Question 4:** A computer sorts 10,000 photos of fish into groups. Which of
-dese would be a GOOD classification rule?
-- A) Sort by which fish taste best
-- B) Sort by which fish di computer like
-- C) Sort by size, color, and shape
-- D) Sort by random
+**Question 4:** How does Spotify use AI classification?
+- A) It sort songs by how expensive dem are
+- B) It classify songs by tempo, mood, instruments fi recommend music yuh
+   might like
+- C) It only play one type of music
+- D) It doesn't use AI
 
-**Question 5:** In di Caribbean Sorting Hat activity, what does each YES/NO
-question do?
-- A) It make di sorting take longer
-- B) It split tings into smaller groups until each ting has a place
-- C) It confuse di computer
-- D) Nothing important
+**Question 5:** Yuh have dese items: cricket bat, football, cricket ball,
+football boots, cricket pads. How would yuh classify dem into two groups?
+- A) By colour only
+- B) Cricket equipment in one group, Football equipment in another
+- C) Put dem all in one pile
+- D) Yuh can't sort sports equipment
 
 ---
 
-## 🌟 Yuh Mashing It!
+## 🌟 Fantastic Work!
 
-Yuh just finish Lesson 3! Now yuh can sort and classify like a real AI system!
+Yuh is a Sorting and Classifying Champion now! Yuh learn fi sort fruits,
+flags, music, and sports stars — just like how AI sort millions of tings
+every day!
 
-**Next up: Lesson 4 — Simple Coding!** We going write yuh FIRST Python program —
-a Caribbean island guessing game! Yuh going need a computer fi dat one!
+**Next up: Lesson 4 — Simple Coding!** We going write yuh FIRST Python
+program — a Caribbean island guessing game! Get ready fi di computer! 💻
 
 ---
 
