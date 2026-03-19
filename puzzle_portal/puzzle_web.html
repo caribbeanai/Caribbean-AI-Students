@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caribbean AI Puzzle Portal</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap');
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Nunito', sans-serif;
             background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 30%, #0d7377 60%, #14a085 100%);
             min-height: 100vh;
             color: #fff;
             overflow-x: hidden;
         }
 
-        /* Animated waves at the bottom */
+        /* Animated background waves */
         .ocean {
             position: fixed;
             bottom: 0;
@@ -34,222 +38,209 @@
             left: -50%;
             width: 200%;
             height: 100px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%2300b4d8' fill-opacity='0.3' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,186.7C960,213,1056,235,1152,229.3C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
-            background-size: 50% 100%;
-            animation: wave-move 8s linear infinite;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%23ffffff15' d='M0,50 C360,100 720,0 1080,50 C1260,75 1350,25 1440,50 L1440,100 L0,100 Z'/%3E%3C/svg%3E") repeat-x;
+            background-size: 1440px 100px;
+            animation: wave 8s linear infinite;
         }
 
         .wave:nth-child(2) {
             bottom: -10px;
             opacity: 0.5;
-            animation-duration: 12s;
-            animation-direction: reverse;
+            animation: wave 12s linear infinite reverse;
         }
 
-        @keyframes wave-move {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(25%); }
+        .wave:nth-child(3) {
+            bottom: -20px;
+            opacity: 0.3;
+            animation: wave 15s linear infinite;
         }
 
-        /* Floating particles */
-        .particles {
+        @keyframes wave {
+            from { transform: translateX(0); }
+            to { transform: translateX(50%); }
+        }
+
+        /* Floating stars */
+        .stars {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
             z-index: 0;
+            pointer-events: none;
         }
 
-        .particle {
+        .star {
             position: absolute;
-            background: rgba(255, 255, 255, 0.15);
+            width: 3px;
+            height: 3px;
+            background: #fff;
             border-radius: 50%;
-            animation: float-up linear infinite;
+            animation: twinkle 3s ease-in-out infinite;
         }
 
-        @keyframes float-up {
-            0% { transform: translateY(100vh) scale(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
         }
 
         .container {
             position: relative;
             z-index: 1;
-            max-width: 750px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px 180px;
+            padding: 40px 20px 160px;
         }
 
-        .header {
+        header {
             text-align: center;
             margin-bottom: 40px;
         }
 
-        .header h1 {
-            font-size: 2.5em;
-            font-weight: 900;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            margin-bottom: 5px;
-            background: linear-gradient(to right, #f9d423, #ff4e50, #00b4d8, #14a085);
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.8em;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ffd700, #ff6b35, #ffd700);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
         }
 
-        .header .subtitle {
-            font-size: 1em;
-            opacity: 0.8;
-            margin-bottom: 8px;
+        @keyframes shimmer {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
         }
 
-        .header .credit {
-            font-size: 0.85em;
-            opacity: 0.6;
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 5px;
         }
 
-        .header .credit a {
-            color: #f9d423;
+        .credit {
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+
+        .credit a {
+            color: #ffd700;
             text-decoration: none;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 25px;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-        }
-
-        .card h2 {
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            color: #f9d423;
-        }
-
-        .card p, .card li {
-            font-size: 0.95em;
-            line-height: 1.7;
-            opacity: 0.9;
-        }
-
-        .card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .card ul li {
-            padding: 6px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .card ul li::before {
-            content: "\1F9E9";
-            position: absolute;
-            left: 0;
-        }
-
-        .input-section {
+        .proverb {
+            font-style: italic;
             text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 4px solid #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 0 10px 10px 0;
         }
 
-        .input-section input {
-            width: 100%;
-            padding: 18px 25px;
+        .puzzle-section {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .puzzle-section h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        #answer-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px 20px;
             font-size: 1.2em;
-            font-family: 'Poppins', monospace;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 15px;
-            background: rgba(0,0,0,0.3);
+            font-family: 'Nunito', sans-serif;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.3);
             color: #fff;
             outline: none;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            letter-spacing: 2px;
+            transition: all 0.3s;
         }
 
-        .input-section input:focus {
-            border-color: #f9d423;
-            box-shadow: 0 0 25px rgba(249, 212, 35, 0.3);
+        #answer-input:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
         }
 
-        .input-section input::placeholder {
-            color: rgba(255,255,255,0.35);
+        #answer-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        #submit-btn {
+            padding: 15px 35px;
+            font-size: 1.1em;
+            font-family: 'Fredoka One', cursive;
+            background: linear-gradient(135deg, #ffd700, #ff6b35);
+            color: #1a1a2e;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .submit-btn {
-            margin-top: 20px;
-            padding: 16px 50px;
-            font-size: 1.1em;
-            font-weight: 700;
-            font-family: 'Poppins', sans-serif;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            background: linear-gradient(135deg, #f9d423, #f83600);
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 5px 20px rgba(248, 54, 0, 0.4);
+        #submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
         }
 
-        .submit-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(248, 54, 0, 0.6);
-        }
-
-        .submit-btn:active {
-            transform: scale(0.98);
+        #submit-btn:active {
+            transform: translateY(0);
         }
 
         #result {
             margin-top: 25px;
-            padding: 20px;
+            padding: 0;
             border-radius: 15px;
-            display: none;
-            font-size: 1em;
-            line-height: 1.8;
+            transition: all 0.5s;
+            overflow: hidden;
         }
 
-        #result.wrong {
-            display: block;
-            background: rgba(255, 50, 50, 0.2);
-            border: 1px solid rgba(255, 50, 50, 0.4);
-            animation: shake 0.5s ease-in-out;
+        #result.show {
+            padding: 25px;
         }
 
         #result.correct {
-            display: block;
-            background: rgba(20, 160, 133, 0.3);
-            border: 1px solid rgba(20, 160, 133, 0.6);
-            animation: celebrate 1s ease-in-out;
+            background: linear-gradient(135deg, rgba(0, 200, 83, 0.2), rgba(0, 150, 60, 0.2));
+            border: 2px solid #00c853;
         }
 
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            20% { transform: translateX(-10px); }
-            40% { transform: translateX(10px); }
-            60% { transform: translateX(-10px); }
-            80% { transform: translateX(10px); }
+        #result.wrong {
+            background: rgba(255, 82, 82, 0.15);
+            border: 2px solid rgba(255, 82, 82, 0.5);
         }
 
-        @keyframes celebrate {
-            0% { transform: scale(0.8); opacity: 0; }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); opacity: 1; }
+        .attempts-counter {
+            text-align: center;
+            margin-top: 15px;
+            opacity: 0.7;
+            font-size: 0.9em;
         }
 
+        /* Celebration animation */
         .confetti-container {
             position: fixed;
             top: 0;
@@ -257,306 +248,391 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 999;
+            z-index: 100;
             overflow: hidden;
         }
 
-        .confetti-piece {
+        .confetti {
             position: absolute;
-            top: -20px;
-            width: 12px;
-            height: 12px;
-            animation: confetti-fall linear forwards;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            animation: confetti-fall 4s ease-in forwards;
         }
 
         @keyframes confetti-fall {
-            0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+            to {
+                top: 110vh;
+                transform: rotate(720deg);
+            }
         }
 
-        .attempt-counter {
-            text-align: center;
-            margin-top: 10px;
-            opacity: 0.5;
-            font-size: 0.85em;
-        }
-
-        .proverb {
-            text-align: center;
-            font-style: italic;
-            opacity: 0.6;
-            margin-top: 15px;
-            font-size: 0.9em;
-        }
-
+        /* Reward reveal */
         .reward-box {
-            background: linear-gradient(135deg, #f9d423, #f83600);
-            padding: 3px;
-            border-radius: 18px;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            color: #1a1a2e;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+            text-align: center;
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); }
+        }
+
+        .reward-box h3 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .reward-box .email {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            letter-spacing: 1px;
+        }
+
+        .reward-box p {
+            margin: 8px 0;
+        }
+
+        .hidden { display: none; }
+
+        /* Palm tree decorations */
+        .palm {
+            position: fixed;
+            bottom: 80px;
+            font-size: 4em;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        .palm.left { left: 20px; }
+        .palm.right { right: 20px; }
+
+        /* Hints section */
+        .hints-section {
             margin-top: 20px;
         }
 
-        .reward-box-inner {
-            background: rgba(10, 22, 40, 0.95);
-            border-radius: 16px;
-            padding: 25px;
+        .hint-text {
+            padding: 10px 15px;
+            margin: 5px 0;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .hint-good {
+            background: rgba(0, 200, 83, 0.15);
+            border-left: 3px solid #00c853;
+        }
+
+        .hint-bad {
+            background: rgba(255, 170, 0, 0.15);
+            border-left: 3px solid #ffaa00;
+        }
+
+        .hint-format {
+            background: rgba(255, 82, 82, 0.15);
+            border-left: 3px solid #ff5252;
+        }
+
+        footer {
             text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            opacity: 0.6;
+            font-size: 0.85em;
         }
 
-        .reward-box-inner .email {
-            font-size: 1.4em;
-            font-weight: 700;
-            color: #f9d423;
-            letter-spacing: 1px;
-            margin: 15px 0;
-        }
-
-        .palm-tree {
-            display: inline-block;
-            font-size: 2em;
-            animation: sway 3s ease-in-out infinite;
-        }
-
-        @keyframes sway {
-            0%, 100% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-<div class="particles" id="particles"></div>
-<div class="ocean">
-    <div class="wave"></div>
-    <div class="wave"></div>
-</div>
-
-<div class="container">
-    <div class="header">
-        <div class="palm-tree">&#127796;</div>
-        <h1>Caribbean AI Puzzle Portal</h1>
-        <p class="subtitle">Collect all 12 pieces. Decode the passphrase. Claim your reward.</p>
-        <p class="credit">Designed by <a href="https://Adriandunkley.net" target="_blank">Adrian Dunkley</a> | FREE Curriculum</p>
+    <!-- Background elements -->
+    <div class="stars" id="stars"></div>
+    <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
     </div>
 
-    <div class="card">
-        <h2>The Challenge</h2>
-        <p>Throughout the entire Caribbean AI curriculum, 12 puzzle pieces are hidden.
-        Each piece is a clue. When you decode them all and combine them, they form a
-        <strong>secret passphrase</strong> that proves you completed the full journey.</p>
-        <br>
-        <ul>
-            <li><strong>Piece 1:</strong> A color from traffic lights and the Jamaican flag</li>
-            <li><strong>Piece 2:</strong> Power _____ (Morphin Time!)</li>
-            <li><strong>Piece 3:</strong> Universe Boss jersey number minus 40</li>
-            <li><strong>Piece 4:</strong> Make that number two digits</li>
-            <li><strong>Piece 5:</strong> Anime about VR gaming with "art" in the name</li>
-            <li><strong>Piece 6:</strong> A knight's weapon (confirms Piece 5)</li>
-            <li><strong>Piece 7:</strong> Keep going, champion!</li>
-            <li><strong>Piece 8:</strong> Format: [color][hero][number][anime]</li>
-            <li><strong>Piece 9:</strong> Animal colored like Piece 1's answer</li>
-            <li><strong>Piece 10:</strong> The one colored like limes and grass</li>
-            <li><strong>Piece 11:</strong> No spaces, no caps, one continuous string</li>
-            <li><strong>Piece 12:</strong> Final assembly -- 20 characters total</li>
-        </ul>
-    </div>
+    <div class="container">
+        <header>
+            <h1>The Caribbean AI Puzzle Portal</h1>
+            <p class="subtitle">Collect all 12 pieces. Decode the passphrase. Claim your reward!</p>
+            <p class="credit">Designed by <a href="https://Adriandunkley.net" target="_blank">Adrian Dunkley</a> | FREE Curriculum</p>
+        </header>
 
-    <div class="card input-section">
-        <h2>Enter Your Passphrase</h2>
-        <p style="margin-bottom: 20px; opacity: 0.7;">All lowercase. No spaces. Letters and digits only.</p>
-
-        <input type="text" id="answer-input" placeholder="Type yuh passphrase here..."
-               autocomplete="off" spellcheck="false"
-               onkeydown="if(event.key==='Enter') checkAnswer()">
-
-        <br>
-        <button class="submit-btn" onclick="checkAnswer()">Check Answer</button>
-
-        <div id="result"></div>
-        <div class="attempt-counter" id="attempt-counter"></div>
-        <div class="proverb" id="proverb"></div>
-    </div>
-
-    <div class="card" id="reward-card" style="display: none;">
-        <h2 style="text-align: center;">Your Reward!</h2>
-        <div class="reward-box">
-            <div class="reward-box-inner">
-                <p>You have completed the <strong>entire Caribbean AI Curriculum!</strong></p>
-                <p>Contact the creator to claim your Certificate of Completion:</p>
-                <p class="email">founder@starapple.ai</p>
-                <p>Website: <a href="https://Adriandunkley.net" target="_blank" style="color: #00b4d8;">Adriandunkley.net</a></p>
-                <br>
-                <p><strong>Email subject:</strong> "Caribbean AI Puzzle Complete!"</p>
-                <p>Include your name, your island, and your AI journey story!</p>
-                <br>
-                <p style="opacity: 0.6;">This curriculum is FREE. Share it with everyone!</p>
-            </div>
+        <div class="proverb">
+            "Every piece ah di puzzle bring yuh closer to greatness. Nuh give up now, champion!"
         </div>
+
+        <div class="puzzle-section">
+            <h2>Enter Your Passphrase</h2>
+            <p>You collected all 12 puzzle pieces from the curriculum?
+               Put dem together and type di passphrase below!</p>
+            <p style="margin-top:10px; opacity:0.7; font-size:0.9em;">
+                All lowercase. No spaces. Letters and digits only. 20 characters total.
+            </p>
+
+            <div class="input-group">
+                <input type="text" id="answer-input"
+                       placeholder="Type yuh passphrase here..."
+                       autocomplete="off" spellcheck="false"
+                       maxlength="40">
+                <button id="submit-btn" onclick="checkAnswer()">Check It!</button>
+            </div>
+
+            <div class="attempts-counter" id="attempts-display"></div>
+
+            <div id="result"></div>
+        </div>
+
+        <div class="puzzle-section">
+            <h2>Need a Refresher?</h2>
+            <p>The 12 puzzle pieces are scattered throughout the entire Caribbean AI curriculum.
+               Check the <strong>puzzle_portal/README.md</strong> file for all the clue descriptions.</p>
+            <p style="margin-top: 15px;">Quick reminders:</p>
+            <ul style="margin: 10px 0 0 20px; line-height: 2;">
+                <li>Piece 1: A color from traffic lights and the Jamaican flag</li>
+                <li>Piece 2: Power _____ ! (Morphin Time!)</li>
+                <li>Piece 3: Universe Boss jersey number minus 40</li>
+                <li>Piece 4: Make it two digits (computer-style)</li>
+                <li>Piece 5: Anime about online gaming with "art" in the name</li>
+                <li>Piece 6: A knight's weapon (confirms Piece 5)</li>
+                <li>Piece 7: Just encouragement -- keep going!</li>
+                <li>Piece 8: Format = [color][hero][number][anime]</li>
+                <li>Piece 9: What color is the hero?</li>
+                <li>Piece 10: Colored like limes, grass, the go signal</li>
+                <li>Piece 11: No spaces, no caps, one string</li>
+                <li>Piece 12: Final assembly instructions</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Caribbean AI Curriculum &mdash; Designed by
+               <a href="https://Adriandunkley.net" target="_blank">Adrian Dunkley</a></p>
+            <p>This curriculum is completely FREE. Share it with everyone!</p>
+        </footer>
     </div>
 
-    <div class="card" style="text-align: center; opacity: 0.7;">
-        <p>Created by <strong>Adrian Dunkley</strong> |
-        <a href="https://Adriandunkley.net" target="_blank" style="color: #f9d423;">Adriandunkley.net</a></p>
-        <p style="font-size: 0.85em; margin-top: 5px;">This curriculum is completely FREE.</p>
-    </div>
-</div>
+    <div class="confetti-container" id="confetti-container"></div>
 
-<div class="confetti-container" id="confetti-container"></div>
-
-<script>
-    // =========================================================================
-    // Correct answer hash (SHA-256) -- we never store the plaintext!
-    // =========================================================================
-    const CORRECT_HASH = "a27cd38dd2c8eb5057640bf5109facb7976a9e13d00616422a4af89377d948ce";
-
-    let attempts = 0;
-    const maxAttempts = 15;
-
-    const wrongMessages = [
-        "Hmm, dat nah right! But doh give up, champion!",
-        "Close but no cigar... or should we say, no sugarcane!",
-        "Dat ain't it, fam. Go back and check yuh puzzle pieces!",
-        "Nah, star. Every wrong answer teach yuh something!",
-        "Not quite! Di journey is di reward. Keep pushing!",
-        "Wah gwaan?! Dat nuh match. Check yuh clues again!",
-        "Wrong answer, but right spirit! Keep dat energy!",
-    ];
-
-    const proverbs = [
-        '"Cockroach nuh business inna fowl fight." -- But THIS fight is yours!',
-        '"One one cocoa full basket." -- One clue at a time!',
-        '"Every day bucket go ah well..." -- Keep trying!',
-        '"If yuh want good, yuh nose haffi run." -- Work fi it!',
-        '"Wha sweet nanny goat ah go run him belly." -- Di answer sweet!',
-    ];
-
-    // Create floating particles
-    (function createParticles() {
-        const container = document.getElementById('particles');
-        for (let i = 0; i < 30; i++) {
-            const p = document.createElement('div');
-            p.classList.add('particle');
-            const size = Math.random() * 6 + 2;
-            p.style.width = size + 'px';
-            p.style.height = size + 'px';
-            p.style.left = Math.random() * 100 + '%';
-            p.style.animationDuration = (Math.random() * 15 + 10) + 's';
-            p.style.animationDelay = (Math.random() * 15) + 's';
-            container.appendChild(p);
-        }
-    })();
-
-    // SHA-256 using Web Crypto API
-    async function sha256(message) {
-        const msgBuffer = new TextEncoder().encode(message);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    }
-
-    function getHints(answer) {
-        const hints = [];
-        const a = answer.toLowerCase().trim();
-
-        if (a.includes(' ')) hints.push("Remove ALL spaces! One continuous string.");
-        if (a !== a.toLowerCase()) hints.push("Everything must be lowercase!");
-        if (!a.includes('green')) hints.push("Piece 1: Think traffic light GO signal...");
-        else hints.push("Piece 1: Color is correct!");
-        if (!a.includes('ranger')) {
-            if (a.includes('rangers')) hints.push("Piece 2: Use singular, not plural!");
-            else hints.push("Piece 2: Power _____ ! Fill in the blank!");
-        } else hints.push("Piece 2: Hero type is correct!");
-        if (!a.includes('05')) {
-            if (a.includes('5')) hints.push("Pieces 3-4: Right digit, but pad to TWO digits!");
-            else hints.push("Piece 3: Gayle's 45 minus 40, then zero-pad!");
-        } else hints.push("Pieces 3-4: Number is correct!");
-        if (!a.includes('swordart')) {
-            hints.push("Piece 5: VR anime = [weapon] + art. No spaces, no 'Online'!");
-        } else hints.push("Piece 5: Anime is correct!");
-
-        const clean = a.replace(/\s/g, '');
-        if (clean.length !== 20) {
-            hints.push("Length: " + clean.length + " chars (need exactly 20)");
+    <script>
+        // Generate background stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 80; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.animationDuration = (2 + Math.random() * 3) + 's';
+            starsContainer.appendChild(star);
         }
 
-        return hints.join('<br>');
-    }
+        // Correct answer SHA-256 hash
+        const CORRECT_HASH = 'a27cd38dd2c8eb5057640bf5109facb7976a9e13d00616422a4af89377d948ce';
+        const REWARD_EMAIL = 'founder@starapple.ai';
 
-    function launchConfetti() {
-        const container = document.getElementById('confetti-container');
-        const colors = ['#f9d423', '#f83600', '#00b4d8', '#14a085', '#ff6b6b',
-                        '#ffd93d', '#6bcb77', '#4d96ff', '#ff6b6b', '#fff'];
-        for (let i = 0; i < 150; i++) {
-            const piece = document.createElement('div');
-            piece.classList.add('confetti-piece');
-            piece.style.left = Math.random() * 100 + '%';
-            piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-            piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
-            piece.style.width = (Math.random() * 10 + 5) + 'px';
-            piece.style.height = (Math.random() * 10 + 5) + 'px';
-            piece.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            piece.style.animationDelay = (Math.random() * 2) + 's';
-            container.appendChild(piece);
-        }
-        setTimeout(() => { container.innerHTML = ''; }, 6000);
-    }
+        let attempts = 0;
+        const maxAttempts = 15;
 
-    async function checkAnswer() {
-        const input = document.getElementById('answer-input');
-        const resultDiv = document.getElementById('result');
-        const counterDiv = document.getElementById('attempt-counter');
-        const proverbDiv = document.getElementById('proverb');
-        const answer = input.value.trim().toLowerCase();
+        const wrongMessages = [
+            "Hmm, dat nah right! But doh give up, champion!",
+            "Close but no cigar... or should we say, no sugarcane!",
+            "Dat ain't it, fam. Check yuh puzzle pieces!",
+            "Nah, star. Every wrong answer teach yuh something!",
+            "Not quite! Di journey is di reward. Try again!",
+            "Wah gwaan?! Dat nuh match. Review di clues!",
+            "Wrong answer, but right spirit! Keep going!"
+        ];
 
-        if (!answer) {
-            resultDiv.className = 'wrong';
-            resultDiv.style.display = 'block';
-            resultDiv.innerHTML = 'Yuh didn\'t type anything! Go collect dem puzzle pieces first!';
-            return;
+        // SHA-256 hash function using Web Crypto API
+        async function sha256(message) {
+            const msgBuffer = new TextEncoder().encode(message);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
         }
 
-        attempts++;
-        const hash = await sha256(answer);
+        // Provide hints based on the answer
+        function getHints(answer) {
+            const hints = [];
+            const a = answer.toLowerCase().trim();
 
-        if (hash === CORRECT_HASH) {
-            resultDiv.className = 'correct';
-            resultDiv.style.display = 'block';
-            resultDiv.innerHTML = `
-                <h2 style="color: #f9d423; margin-bottom: 10px;">
-                    CONGRATULATIONS, CHAMPION!!!
-                </h2>
-                <p>YUH DID IT! You solved the Caribbean AI Puzzle!</p>
-                <p>You completed the <strong>ENTIRE</strong> Caribbean AI Curriculum!</p>
-                <p style="margin-top: 10px;">BIG UP YUHSELF! DI CARIBBEAN IS PROUD OF YOU!</p>
-            `;
-            document.getElementById('reward-card').style.display = 'block';
-            document.getElementById('reward-card').scrollIntoView({ behavior: 'smooth' });
-            counterDiv.textContent = '';
-            proverbDiv.textContent = '';
-            input.disabled = true;
-            launchConfetti();
-            // Launch confetti again after a delay
-            setTimeout(launchConfetti, 3000);
-        } else {
-            resultDiv.className = 'wrong';
-            resultDiv.style.display = 'block';
-            const msg = wrongMessages[Math.floor(Math.random() * wrongMessages.length)];
-            resultDiv.innerHTML = `
-                <p><strong>${msg}</strong></p>
-                <br>
-                <p style="font-size: 0.9em;">${getHints(answer)}</p>
-            `;
-            const remaining = maxAttempts - attempts;
-            if (remaining > 0) {
-                counterDiv.textContent = `Attempts remaining: ${remaining}`;
-            } else {
-                counterDiv.textContent = 'Out of attempts! Refresh the page to try again.';
-                input.disabled = true;
+            if (a.includes(' ')) {
+                hints.push({ type: 'format', text: 'Remove ALL spaces! One continuous string!' });
             }
-            proverbDiv.textContent = proverbs[Math.floor(Math.random() * proverbs.length)];
-        }
-    }
-</script>
+            if (answer !== answer.toLowerCase()) {
+                hints.push({ type: 'format', text: 'Everything must be LOWERCASE!' });
+            }
 
+            if (!a.includes('green')) {
+                hints.push({ type: 'bad', text: 'Piece 1: Think "GO" on traffic lights. The color of Caribbean hills...' });
+            } else {
+                hints.push({ type: 'good', text: 'Piece 1: Color is correct!' });
+            }
+
+            if (!a.includes('ranger')) {
+                hints.push({ type: 'bad', text: 'Piece 2: "It\'s Morphin Time!" Power _____ !' });
+            } else {
+                hints.push({ type: 'good', text: 'Piece 2: Hero type is correct!' });
+            }
+
+            if (!a.includes('05')) {
+                if (a.includes('5') && !a.includes('05')) {
+                    hints.push({ type: 'bad', text: 'Pieces 3-4: Right digit, but pad to TWO digits! (Think: 01, 02, 03...)' });
+                } else {
+                    hints.push({ type: 'bad', text: 'Piece 3: Gayle jersey 45 minus 40 = ? Then make it two digits!' });
+                }
+            } else {
+                hints.push({ type: 'good', text: 'Pieces 3-4: Number is correct!' });
+            }
+
+            if (!a.includes('swordart')) {
+                hints.push({ type: 'bad', text: 'Piece 5: Anime about VR gaming. Name = [knight\'s weapon] + "art". Drop "Online".' });
+            } else {
+                hints.push({ type: 'good', text: 'Piece 5: Anime is correct!' });
+            }
+
+            const clean = a.replace(/\s/g, '');
+            if (clean.length !== 20) {
+                hints.push({ type: 'format', text: `Your answer: ${clean.length} chars. Correct answer: 20 chars.` });
+            }
+
+            return hints;
+        }
+
+        // Launch confetti
+        function launchConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#ffd700', '#ff6b35', '#00c853', '#2196f3', '#ff4081', '#e040fb', '#fff'];
+
+            for (let i = 0; i < 120; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = (5 + Math.random() * 10) + 'px';
+                    confetti.style.height = (5 + Math.random() * 10) + 'px';
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    confetti.style.animationDuration = (3 + Math.random() * 3) + 's';
+                    confetti.style.animationDelay = '0s';
+                    container.appendChild(confetti);
+
+                    setTimeout(() => confetti.remove(), 6000);
+                }, i * 30);
+            }
+        }
+
+        // Check the answer
+        async function checkAnswer() {
+            const input = document.getElementById('answer-input');
+            const resultDiv = document.getElementById('result');
+            const answer = input.value.trim().toLowerCase();
+
+            if (!answer) {
+                resultDiv.className = 'wrong show';
+                resultDiv.innerHTML = '<p>Yuh didn\'t type anything! Go collect dem puzzle pieces first!</p>';
+                return;
+            }
+
+            attempts++;
+            const hash = await sha256(answer);
+
+            if (hash === CORRECT_HASH) {
+                // CORRECT!
+                launchConfetti();
+
+                resultDiv.className = 'correct show';
+                resultDiv.innerHTML = `
+                    <h2 style="color:#00c853; font-family:'Fredoka One',cursive; font-size:1.8em; text-align:center;">
+                        YUH DID IT, CHAMPION!!!
+                    </h2>
+                    <p style="text-align:center; font-size:1.1em; margin:15px 0;">
+                        You solved the Caribbean AI Puzzle!<br>
+                        You completed the ENTIRE Caribbean AI Curriculum!
+                    </p>
+                    <div class="reward-box">
+                        <h3>YOUR REWARD</h3>
+                        <p>Contact the curriculum creator to claim your Certificate of Completion:</p>
+                        <div class="email">${REWARD_EMAIL}</div>
+                        <p><strong>Website:</strong> <a href="https://Adriandunkley.net" target="_blank" style="color:#1a1a2e;">Adriandunkley.net</a></p>
+                        <p style="margin-top:15px;">
+                            <strong>Subject:</strong> "Caribbean AI Puzzle Complete!"<br>
+                            <strong>Include:</strong> Your name, your island, your journey!
+                        </p>
+                    </div>
+                    <p style="text-align:center; margin-top:20px; font-size:1.1em;">
+                        BIG UP YUHSELF! DI CARIBBEAN IS PROUD OF YOU!<br>
+                        <em>This curriculum is FREE. Share it with everyone!</em>
+                    </p>
+                `;
+
+                input.disabled = true;
+                document.getElementById('submit-btn').disabled = true;
+                document.getElementById('attempts-display').textContent = '';
+            } else {
+                // WRONG
+                const msg = wrongMessages[Math.floor(Math.random() * wrongMessages.length)];
+                const hints = getHints(input.value);
+                let hintsHTML = hints.map(h =>
+                    `<div class="hint-text hint-${h.type}">${h.text}</div>`
+                ).join('');
+
+                resultDiv.className = 'wrong show';
+                resultDiv.innerHTML = `
+                    <p style="font-size:1.1em; margin-bottom:15px;">${msg}</p>
+                    <div class="hints-section">${hintsHTML}</div>
+                `;
+
+                const remaining = maxAttempts - attempts;
+                if (remaining > 0) {
+                    document.getElementById('attempts-display').textContent =
+                        `Attempts remaining: ${remaining}`;
+                } else {
+                    document.getElementById('attempts-display').textContent =
+                        'Out of attempts! Refresh the page to try again.';
+                    input.disabled = true;
+                    document.getElementById('submit-btn').disabled = true;
+                }
+
+                // Shake animation
+                input.style.animation = 'none';
+                setTimeout(() => { input.style.animation = 'shake 0.5s'; }, 10);
+            }
+        }
+
+        // Allow Enter key to submit
+        document.getElementById('answer-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') checkAnswer();
+        });
+
+        // Shake animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                20% { transform: translateX(-10px); }
+                40% { transform: translateX(10px); }
+                60% { transform: translateX(-10px); }
+                80% { transform: translateX(10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
