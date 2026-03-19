@@ -19,7 +19,7 @@ import random
 # The correct answer hash (SHA-256)
 # We NEVER store the plaintext answer -- only its hash.
 # =============================================================================
-CORRECT_HASH = "5f2c457e3811e3659e14ac0e80a8a7927de3b794cab77b7952db6a72f1a30050"
+CORRECT_HASH = "a27cd38dd2c8eb5057640bf5109facb7976a9e13d00616422a4af89377d948ce"
 
 REWARD_EMAIL = "founder@starapple.ai"
 

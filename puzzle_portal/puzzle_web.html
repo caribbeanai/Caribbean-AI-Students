@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caribbean AI Puzzle Portal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 30%, #0d7377 60%, #14a085 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Animated waves at the bottom */
+        .ocean {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: -50%;
+            width: 200%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%2300b4d8' fill-opacity='0.3' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,186.7C960,213,1056,235,1152,229.3C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            background-size: 50% 100%;
+            animation: wave-move 8s linear infinite;
+        }
+
+        .wave:nth-child(2) {
+            bottom: -10px;
+            opacity: 0.5;
+            animation-duration: 12s;
+            animation-direction: reverse;
+        }
+
+        @keyframes wave-move {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(25%); }
+        }
+
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            animation: float-up linear infinite;
+        }
+
+        @keyframes float-up {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 40px 20px 180px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 900;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            margin-bottom: 5px;
+            background: linear-gradient(to right, #f9d423, #ff4e50, #00b4d8, #14a085);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .subtitle {
+            font-size: 1em;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .header .credit {
+            font-size: 0.85em;
+            opacity: 0.6;
+        }
+
+        .header .credit a {
+            color: #f9d423;
+            text-decoration: none;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 25px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .card h2 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #f9d423;
+        }
+
+        .card p, .card li {
+            font-size: 0.95em;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card ul li {
+            padding: 6px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: "\1F9E9";
+            position: absolute;
+            left: 0;
+        }
+
+        .input-section {
+            text-align: center;
+        }
+
+        .input-section input {
+            width: 100%;
+            padding: 18px 25px;
+            font-size: 1.2em;
+            font-family: 'Poppins', monospace;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 15px;
+            background: rgba(0,0,0,0.3);
+            color: #fff;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            letter-spacing: 2px;
+        }
+
+        .input-section input:focus {
+            border-color: #f9d423;
+            box-shadow: 0 0 25px rgba(249, 212, 35, 0.3);
+        }
+
+        .input-section input::placeholder {
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 1px;
+        }
+
+        .submit-btn {
+            margin-top: 20px;
+            padding: 16px 50px;
+            font-size: 1.1em;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #f9d423, #f83600);
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 5px 20px rgba(248, 54, 0, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(248, 54, 0, 0.6);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        #result {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 15px;
+            display: none;
+            font-size: 1em;
+            line-height: 1.8;
+        }
+
+        #result.wrong {
+            display: block;
+            background: rgba(255, 50, 50, 0.2);
+            border: 1px solid rgba(255, 50, 50, 0.4);
+            animation: shake 0.5s ease-in-out;
+        }
+
+        #result.correct {
+            display: block;
+            background: rgba(20, 160, 133, 0.3);
+            border: 1px solid rgba(20, 160, 133, 0.6);
+            animation: celebrate 1s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-10px); }
+            40% { transform: translateX(10px); }
+            60% { transform: translateX(-10px); }
+            80% { transform: translateX(10px); }
+        }
+
+        @keyframes celebrate {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            top: -20px;
+            width: 12px;
+            height: 12px;
+            animation: confetti-fall linear forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+        }
+
+        .attempt-counter {
+            text-align: center;
+            margin-top: 10px;
+            opacity: 0.5;
+            font-size: 0.85em;
+        }
+
+        .proverb {
+            text-align: center;
+            font-style: italic;
+            opacity: 0.6;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .reward-box {
+            background: linear-gradient(135deg, #f9d423, #f83600);
+            padding: 3px;
+            border-radius: 18px;
+            margin-top: 20px;
+        }
+
+        .reward-box-inner {
+            background: rgba(10, 22, 40, 0.95);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .reward-box-inner .email {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #f9d423;
+            letter-spacing: 1px;
+            margin: 15px 0;
+        }
+
+        .palm-tree {
+            display: inline-block;
+            font-size: 2em;
+            animation: sway 3s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="particles" id="particles"></div>
+<div class="ocean">
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
+
+<div class="container">
+    <div class="header">
+        <div class="palm-tree">&#127796;</div>
+        <h1>Caribbean AI Puzzle Portal</h1>
+        <p class="subtitle">Collect all 12 pieces. Decode the passphrase. Claim your reward.</p>
+        <p class="credit">Designed by <a href="https://Adriandunkley.net" target="_blank">Adrian Dunkley</a> | FREE Curriculum</p>
+    </div>
+
+    <div class="card">
+        <h2>The Challenge</h2>
+        <p>Throughout the entire Caribbean AI curriculum, 12 puzzle pieces are hidden.
+        Each piece is a clue. When you decode them all and combine them, they form a
+        <strong>secret passphrase</strong> that proves you completed the full journey.</p>
+        <br>
+        <ul>
+            <li><strong>Piece 1:</strong> A color from traffic lights and the Jamaican flag</li>
+            <li><strong>Piece 2:</strong> Power _____ (Morphin Time!)</li>
+            <li><strong>Piece 3:</strong> Universe Boss jersey number minus 40</li>
+            <li><strong>Piece 4:</strong> Make that number two digits</li>
+            <li><strong>Piece 5:</strong> Anime about VR gaming with "art" in the name</li>
+            <li><strong>Piece 6:</strong> A knight's weapon (confirms Piece 5)</li>
+            <li><strong>Piece 7:</strong> Keep going, champion!</li>
+            <li><strong>Piece 8:</strong> Format: [color][hero][number][anime]</li>
+            <li><strong>Piece 9:</strong> Animal colored like Piece 1's answer</li>
+            <li><strong>Piece 10:</strong> The one colored like limes and grass</li>
+            <li><strong>Piece 11:</strong> No spaces, no caps, one continuous string</li>
+            <li><strong>Piece 12:</strong> Final assembly -- 20 characters total</li>
+        </ul>
+    </div>
+
+    <div class="card input-section">
+        <h2>Enter Your Passphrase</h2>
+        <p style="margin-bottom: 20px; opacity: 0.7;">All lowercase. No spaces. Letters and digits only.</p>
+
+        <input type="text" id="answer-input" placeholder="Type yuh passphrase here..."
+               autocomplete="off" spellcheck="false"
+               onkeydown="if(event.key==='Enter') checkAnswer()">
+
+        <br>
+        <button class="submit-btn" onclick="checkAnswer()">Check Answer</button>
+
+        <div id="result"></div>
+        <div class="attempt-counter" id="attempt-counter"></div>
+        <div class="proverb" id="proverb"></div>
+    </div>
+
+    <div class="card" id="reward-card" style="display: none;">
+        <h2 style="text-align: center;">Your Reward!</h2>
+        <div class="reward-box">
+            <div class="reward-box-inner">
+                <p>You have completed the <strong>entire Caribbean AI Curriculum!</strong></p>
+                <p>Contact the creator to claim your Certificate of Completion:</p>
+                <p class="email">founder@starapple.ai</p>
+                <p>Website: <a href="https://Adriandunkley.net" target="_blank" style="color: #00b4d8;">Adriandunkley.net</a></p>
+                <br>
+                <p><strong>Email subject:</strong> "Caribbean AI Puzzle Complete!"</p>
+                <p>Include your name, your island, and your AI journey story!</p>
+                <br>
+                <p style="opacity: 0.6;">This curriculum is FREE. Share it with everyone!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="text-align: center; opacity: 0.7;">
+        <p>Created by <strong>Adrian Dunkley</strong> |
+        <a href="https://Adriandunkley.net" target="_blank" style="color: #f9d423;">Adriandunkley.net</a></p>
+        <p style="font-size: 0.85em; margin-top: 5px;">This curriculum is completely FREE.</p>
+    </div>
+</div>
+
+<div class="confetti-container" id="confetti-container"></div>
+
+<script>
+    // =========================================================================
+    // Correct answer hash (SHA-256) -- we never store the plaintext!
+    // =========================================================================
+    const CORRECT_HASH = "a27cd38dd2c8eb5057640bf5109facb7976a9e13d00616422a4af89377d948ce";
+
+    let attempts = 0;
+    const maxAttempts = 15;
+
+    const wrongMessages = [
+        "Hmm, dat nah right! But doh give up, champion!",
+        "Close but no cigar... or should we say, no sugarcane!",
+        "Dat ain't it, fam. Go back and check yuh puzzle pieces!",
+        "Nah, star. Every wrong answer teach yuh something!",
+        "Not quite! Di journey is di reward. Keep pushing!",
+        "Wah gwaan?! Dat nuh match. Check yuh clues again!",
+        "Wrong answer, but right spirit! Keep dat energy!",
+    ];
+
+    const proverbs = [
+        '"Cockroach nuh business inna fowl fight." -- But THIS fight is yours!',
+        '"One one cocoa full basket." -- One clue at a time!',
+        '"Every day bucket go ah well..." -- Keep trying!',
+        '"If yuh want good, yuh nose haffi run." -- Work fi it!',
+        '"Wha sweet nanny goat ah go run him belly." -- Di answer sweet!',
+    ];
+
+    // Create floating particles
+    (function createParticles() {
+        const container = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.classList.add('particle');
+            const size = Math.random() * 6 + 2;
+            p.style.width = size + 'px';
+            p.style.height = size + 'px';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+            p.style.animationDelay = (Math.random() * 15) + 's';
+            container.appendChild(p);
+        }
+    })();
+
+    // SHA-256 using Web Crypto API
+    async function sha256(message) {
+        const msgBuffer = new TextEncoder().encode(message);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function getHints(answer) {
+        const hints = [];
+        const a = answer.toLowerCase().trim();
+
+        if (a.includes(' ')) hints.push("Remove ALL spaces! One continuous string.");
+        if (a !== a.toLowerCase()) hints.push("Everything must be lowercase!");
+        if (!a.includes('green')) hints.push("Piece 1: Think traffic light GO signal...");
+        else hints.push("Piece 1: Color is correct!");
+        if (!a.includes('ranger')) {
+            if (a.includes('rangers')) hints.push("Piece 2: Use singular, not plural!");
+            else hints.push("Piece 2: Power _____ ! Fill in the blank!");
+        } else hints.push("Piece 2: Hero type is correct!");
+        if (!a.includes('05')) {
+            if (a.includes('5')) hints.push("Pieces 3-4: Right digit, but pad to TWO digits!");
+            else hints.push("Piece 3: Gayle's 45 minus 40, then zero-pad!");
+        } else hints.push("Pieces 3-4: Number is correct!");
+        if (!a.includes('swordart')) {
+            hints.push("Piece 5: VR anime = [weapon] + art. No spaces, no 'Online'!");
+        } else hints.push("Piece 5: Anime is correct!");
+
+        const clean = a.replace(/\s/g, '');
+        if (clean.length !== 20) {
+            hints.push("Length: " + clean.length + " chars (need exactly 20)");
+        }
+
+        return hints.join('<br>');
+    }
+
+    function launchConfetti() {
+        const container = document.getElementById('confetti-container');
+        const colors = ['#f9d423', '#f83600', '#00b4d8', '#14a085', '#ff6b6b',
+                        '#ffd93d', '#6bcb77', '#4d96ff', '#ff6b6b', '#fff'];
+        for (let i = 0; i < 150; i++) {
+            const piece = document.createElement('div');
+            piece.classList.add('confetti-piece');
+            piece.style.left = Math.random() * 100 + '%';
+            piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+            piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+            piece.style.width = (Math.random() * 10 + 5) + 'px';
+            piece.style.height = (Math.random() * 10 + 5) + 'px';
+            piece.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            piece.style.animationDelay = (Math.random() * 2) + 's';
+            container.appendChild(piece);
+        }
+        setTimeout(() => { container.innerHTML = ''; }, 6000);
+    }
+
+    async function checkAnswer() {
+        const input = document.getElementById('answer-input');
+        const resultDiv = document.getElementById('result');
+        const counterDiv = document.getElementById('attempt-counter');
+        const proverbDiv = document.getElementById('proverb');
+        const answer = input.value.trim().toLowerCase();
+
+        if (!answer) {
+            resultDiv.className = 'wrong';
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = 'Yuh didn\'t type anything! Go collect dem puzzle pieces first!';
+            return;
+        }
+
+        attempts++;
+        const hash = await sha256(answer);
+
+        if (hash === CORRECT_HASH) {
+            resultDiv.className = 'correct';
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `
+                <h2 style="color: #f9d423; margin-bottom: 10px;">
+                    CONGRATULATIONS, CHAMPION!!!
+                </h2>
+                <p>YUH DID IT! You solved the Caribbean AI Puzzle!</p>
+                <p>You completed the <strong>ENTIRE</strong> Caribbean AI Curriculum!</p>
+                <p style="margin-top: 10px;">BIG UP YUHSELF! DI CARIBBEAN IS PROUD OF YOU!</p>
+            `;
+            document.getElementById('reward-card').style.display = 'block';
+            document.getElementById('reward-card').scrollIntoView({ behavior: 'smooth' });
+            counterDiv.textContent = '';
+            proverbDiv.textContent = '';
+            input.disabled = true;
+            launchConfetti();
+            // Launch confetti again after a delay
+            setTimeout(launchConfetti, 3000);
+        } else {
+            resultDiv.className = 'wrong';
+            resultDiv.style.display = 'block';
+            const msg = wrongMessages[Math.floor(Math.random() * wrongMessages.length)];
+            resultDiv.innerHTML = `
+                <p><strong>${msg}</strong></p>
+                <br>
+                <p style="font-size: 0.9em;">${getHints(answer)}</p>
+            `;
+            const remaining = maxAttempts - attempts;
+            if (remaining > 0) {
+                counterDiv.textContent = `Attempts remaining: ${remaining}`;
+            } else {
+                counterDiv.textContent = 'Out of attempts! Refresh the page to try again.';
+                input.disabled = true;
+            }
+            proverbDiv.textContent = proverbs[Math.floor(Math.random() * proverbs.length)];
+        }
+    }
+</script>
+
+</body>
+</html>
