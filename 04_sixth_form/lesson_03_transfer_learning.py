@@ -5,22 +5,20 @@ Lesson 03: Transfer Learning
 =============================================================================
 Topic: Reusing Knowledge Across Caribbean AI Tasks
 
-Yow! Transfer learning is one of the BIGGEST ideas in modern AI.
-Instead of training a model from scratch every time (expensive and
-slow), we TRANSFER knowledge from one task to another.
+Yow! Imagine yuh learn to play cricket in Jamaica, then yuh move to
+Trinidad and pick up football quick-quick because yuh already have
+athleticism, hand-eye coordination, and game sense. Dat is transfer
+learning!
 
-Think of it like this: if yuh already know how to play cricket,
-learning baseball is MUCH easier — the batting, throwing, and
-fielding skills transfer. Same idea with AI models!
+In AI, transfer learning means: train a model on one task where yuh
+have plenty data, then TRANSFER that knowledge to a new task where
+data is scarce. This is CRITICAL for Caribbean AI because:
+- We often have small datasets (small population islands)
+- Collecting labelled data is expensive
+- Models trained on global data can be adapted for local use
 
-Why this matters for the Caribbean:
-  - We often have SMALL datasets (small island populations)
-  - Training big models from scratch needs expensive GPUs
-  - Transfer learning lets us leverage models trained on BIG
-    datasets and fine-tune them for OUR Caribbean-specific tasks
-
-In this lesson we use scikit-learn to demonstrate the concept:
-train on one Caribbean task, transfer to another.
+We demonstrate with scikit-learn: train on one Caribbean task, then
+apply learned features/knowledge to another.
 
 Requirements: pip install scikit-learn numpy
 Author: Adrian Dunkley | Caribbean AI Academy
@@ -28,252 +26,285 @@ Author: Adrian Dunkley | Caribbean AI Academy
 """
 
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
-from sklearn.preprocessing import StandardScaler
 
 print("=" * 65)
 print("  LESSON 03: Transfer Learning")
-print("  Reusing AI Knowledge Across Caribbean Tasks")
+print("  Reusing Knowledge Across Caribbean AI Tasks")
 print("=" * 65)
+
 
 # =====================================================================
 # SECTION 1: What is Transfer Learning?
 # =====================================================================
-print("\n--- Part 1: The Concept ---\n")
+print("\n--- Part 1: Understanding Transfer Learning ---\n")
 print("""
-TRANSFER LEARNING = Training on Task A, then applying that
-knowledge to Task B.
+TRANSFER LEARNING is like a Jamaican sprinter becoming a bobsledder:
+  - Skills transfer: speed, power, explosiveness
+  - New skills needed: ice handling, sled control
+  - But starting from ZERO would take much longer!
 
-Caribbean Examples:
-  - Train a model to classify Jamaican land use from satellite data,
-    then TRANSFER it to classify Trinidad land use (similar geography)
-  - Train on English text analysis, then fine-tune for Caribbean
-    Creole/Patois text
-  - Learn hurricane patterns from Atlantic data, apply to specific
-    Caribbean island predictions
+In AI, there are several strategies:
 
-In deep learning (CNNs), this usually means:
-  1. Take a pre-trained model (e.g., trained on millions of images)
-  2. Freeze the early layers (they detect general features)
-  3. Retrain only the last few layers on YOUR specific data
+1. FEATURE EXTRACTION
+   - Use a pre-trained model as a feature extractor
+   - Like using a senior cricketer's game sense for coaching analysis
 
-With scikit-learn, we'll demonstrate the concept by:
-  1. Training on one Caribbean economic dataset (Source Task)
-  2. Using that model's learned features on another dataset (Target Task)
+2. FINE-TUNING
+   - Take a pre-trained model and retrain the last few layers
+   - Like a Barbados netball player adjusting to TT court dimensions
+
+3. DOMAIN ADAPTATION
+   - Adapt a model from one domain (e.g., global weather) to another
+     (e.g., Caribbean microclimates)
+
+Why it matters for the Caribbean:
+- ImageNet has millions of images but almost NONE from the Caribbean
+- Medical datasets are mostly from USA/Europe, not our population
+- Transfer learning bridges that gap!
 """)
 
 
 # =====================================================================
-# SECTION 2: Source Task — Caribbean Tourism Classification
+# SECTION 2: Source Task — Caribbean Economic Classification
 # =====================================================================
-print("--- Part 2: Source Task — Tourism Season Classification ---\n")
+print("--- Part 2: Source Task — Economic Sector Classification ---\n")
+
+np.random.seed(42)
 
 
-def generate_tourism_data(n_samples=500, country="Jamaica"):
+def generate_economic_data(n_samples=500):
     """
-    Generate synthetic tourism data for a Caribbean country.
-    Features: monthly_visitors, hotel_occupancy, avg_spend_usd,
-              cruise_arrivals, temperature, rainfall
-    Target: season type (0=Low, 1=Shoulder, 2=Peak)
+    Generate synthetic Caribbean economic indicator data.
+    Task: Classify economic activity into sectors.
+
+    Features: GDP contribution, employment rate, export value,
+              seasonal variation, energy usage
+
+    Sectors: Tourism, Agriculture, Manufacturing, Services
+    Caribbean context: Tourism-heavy economies (Bahamas, Barbados),
+    agriculture (Guyana, Belize), mixed (Jamaica, Trinidad)
     """
-    np.random.seed(42 if country == "Jamaica" else 123)
-    X = []
-    y = []
+    X, y = [], []
 
     for _ in range(n_samples):
-        season = np.random.choice([0, 1, 2], p=[0.3, 0.35, 0.35])
+        sector = np.random.randint(0, 4)
 
-        if season == 0:  # Low season (May-Nov for most Caribbean)
-            visitors = np.random.normal(80000, 15000)
-            occupancy = np.random.normal(45, 10)
-            spend = np.random.normal(120, 25)
-            cruise = np.random.normal(5000, 2000)
-            temp = np.random.normal(30, 1.5)
-            rain = np.random.normal(200, 50)
-        elif season == 1:  # Shoulder season
-            visitors = np.random.normal(140000, 20000)
-            occupancy = np.random.normal(65, 8)
-            spend = np.random.normal(180, 30)
-            cruise = np.random.normal(12000, 3000)
-            temp = np.random.normal(28, 1.5)
-            rain = np.random.normal(100, 30)
-        else:  # Peak season (Dec-Apr)
-            visitors = np.random.normal(220000, 25000)
-            occupancy = np.random.normal(85, 7)
-            spend = np.random.normal(250, 35)
-            cruise = np.random.normal(25000, 5000)
-            temp = np.random.normal(26, 1.5)
-            rain = np.random.normal(50, 20)
+        if sector == 0:  # Tourism (Bahamas, Barbados, Antigua style)
+            gdp = np.random.normal(0.35, 0.08)
+            employment = np.random.normal(0.40, 0.10)
+            exports = np.random.normal(0.20, 0.05)
+            seasonal = np.random.normal(0.8, 0.15)  # Very seasonal
+            energy = np.random.normal(0.30, 0.08)
+        elif sector == 1:  # Agriculture (Guyana, Belize, Suriname)
+            gdp = np.random.normal(0.15, 0.05)
+            employment = np.random.normal(0.30, 0.10)
+            exports = np.random.normal(0.40, 0.10)
+            seasonal = np.random.normal(0.6, 0.12)
+            energy = np.random.normal(0.20, 0.06)
+        elif sector == 2:  # Manufacturing (Trinidad, Jamaica)
+            gdp = np.random.normal(0.20, 0.06)
+            employment = np.random.normal(0.25, 0.08)
+            exports = np.random.normal(0.35, 0.08)
+            seasonal = np.random.normal(0.2, 0.10)  # Less seasonal
+            energy = np.random.normal(0.60, 0.12)  # High energy
+        else:  # Services/Finance (Cayman, BVI, Barbados)
+            gdp = np.random.normal(0.30, 0.07)
+            employment = np.random.normal(0.35, 0.09)
+            exports = np.random.normal(0.15, 0.05)
+            seasonal = np.random.normal(0.3, 0.10)
+            energy = np.random.normal(0.25, 0.07)
 
-        X.append([max(0, visitors), np.clip(occupancy, 0, 100),
-                  max(0, spend), max(0, cruise), temp, max(0, rain)])
-        y.append(season)
+        X.append([gdp, employment, exports, seasonal, energy])
+        y.append(sector)
 
-    return np.array(X, dtype=np.float32), np.array(y)
+    return np.array(X), np.array(y)
 
 
-# Generate SOURCE data (Jamaica)
-X_jamaica, y_jamaica = generate_tourism_data(500, "Jamaica")
-feature_names = ['Visitors', 'Occupancy%', 'AvgSpend$', 'Cruise',
-                 'Temp_C', 'Rainfall_mm']
-season_names = ['Low Season', 'Shoulder', 'Peak Season']
+SECTORS = ['Tourism', 'Agriculture', 'Manufacturing', 'Services']
+X_source, y_source = generate_economic_data(n_samples=500)
+print(f"Source dataset: {X_source.shape[0]} samples, {X_source.shape[1]} features")
+print(f"Sectors: {SECTORS}")
 
-print(f"Source Dataset: Jamaica Tourism ({len(X_jamaica)} samples)")
-print(f"Features: {feature_names}")
-print(f"Classes: {season_names}")
-for i, s in enumerate(season_names):
-    print(f"  {s}: {np.sum(y_jamaica == i)} samples")
-
-# Train the source model
+# Train source model
 scaler_source = StandardScaler()
-X_ja_scaled = scaler_source.fit_transform(X_jamaica)
-X_ja_train, X_ja_test, y_ja_train, y_ja_test = train_test_split(
-    X_ja_scaled, y_jamaica, test_size=0.2, random_state=42
+X_source_scaled = scaler_source.fit_transform(X_source)
+X_s_train, X_s_test, y_s_train, y_s_test = train_test_split(
+    X_source_scaled, y_source, test_size=0.2, random_state=42
 )
 
-source_model = GradientBoostingClassifier(
-    n_estimators=100, max_depth=4, random_state=42
-)
-source_model.fit(X_ja_train, y_ja_train)
+source_model = RandomForestClassifier(n_estimators=100, random_state=42)
+source_model.fit(X_s_train, y_s_train)
 
-source_acc = accuracy_score(y_ja_test, source_model.predict(X_ja_test))
-print(f"\nSource Model (Jamaica) Test Accuracy: {source_acc:.1%}")
-
-# Feature importance — what did the model learn?
-print("\nFeature Importance (what the model learned from Jamaica):")
-for name, imp in sorted(zip(feature_names,
-                            source_model.feature_importances_),
-                        key=lambda x: x[1], reverse=True):
-    bar = "#" * int(imp * 50)
-    print(f"  {name:<15} {imp:.3f} {bar}")
+source_acc = accuracy_score(y_s_test, source_model.predict(X_s_test))
+print(f"Source model accuracy: {source_acc:.1%}")
+print("(This model has learned general patterns about Caribbean economies)")
 
 
 # =====================================================================
-# SECTION 3: Target Task — Transfer to Barbados
+# SECTION 3: Target Task — Investment Risk Classification (SMALL DATA)
 # =====================================================================
-print("\n--- Part 3: Transfer to Barbados (Small Dataset!) ---\n")
+print("\n--- Part 3: Target Task — Investment Risk (Small Dataset) ---\n")
 
-# Generate TARGET data (Barbados — SMALL dataset, simulating
-# limited data availability typical of smaller Caribbean nations)
-X_barbados, y_barbados = generate_tourism_data(80, "Barbados")
 
-print(f"Target Dataset: Barbados Tourism (only {len(X_barbados)} samples!)")
-print("(Smaller islands often have limited data — transfer learning helps!)")
+def generate_investment_data(n_samples=50):
+    """
+    Generate SMALL investment risk dataset — like what a Caribbean
+    development bank might have. Only 50 samples!
 
-# Scale using the SOURCE scaler (transfer the preprocessing knowledge)
-X_bb_scaled = scaler_source.transform(X_barbados)
-X_bb_train, X_bb_test, y_bb_train, y_bb_test = train_test_split(
-    X_bb_scaled, y_barbados, test_size=0.25, random_state=42
+    Features: Same economic indicators (GDP, employment, exports,
+              seasonal, energy) — SIMILAR domain!
+    Labels: Low Risk (0), Medium Risk (1), High Risk (2)
+    """
+    X, y = [], []
+    for _ in range(n_samples):
+        risk = np.random.randint(0, 3)
+
+        if risk == 0:  # Low risk — stable economies
+            gdp = np.random.normal(0.30, 0.06)
+            employment = np.random.normal(0.35, 0.08)
+            exports = np.random.normal(0.30, 0.07)
+            seasonal = np.random.normal(0.3, 0.10)
+            energy = np.random.normal(0.35, 0.08)
+        elif risk == 1:  # Medium risk
+            gdp = np.random.normal(0.20, 0.07)
+            employment = np.random.normal(0.25, 0.10)
+            exports = np.random.normal(0.20, 0.08)
+            seasonal = np.random.normal(0.6, 0.15)
+            energy = np.random.normal(0.40, 0.10)
+        else:  # High risk — vulnerable economies
+            gdp = np.random.normal(0.10, 0.05)
+            employment = np.random.normal(0.15, 0.08)
+            exports = np.random.normal(0.10, 0.06)
+            seasonal = np.random.normal(0.8, 0.12)
+            energy = np.random.normal(0.55, 0.15)
+
+        X.append([gdp, employment, exports, seasonal, energy])
+        y.append(risk)
+
+    return np.array(X), np.array(y)
+
+
+RISK_LEVELS = ['Low Risk', 'Medium Risk', 'High Risk']
+X_target, y_target = generate_investment_data(n_samples=50)
+print(f"Target dataset: ONLY {X_target.shape[0]} samples! (Small island reality)")
+print(f"Risk levels: {RISK_LEVELS}")
+
+X_target_scaled = scaler_source.transform(X_target)  # Use SOURCE scaler!
+X_t_train, X_t_test, y_t_train, y_t_test = train_test_split(
+    X_target_scaled, y_target, test_size=0.3, random_state=42
 )
 
-# APPROACH 1: Train from scratch on Barbados (limited data)
-scratch_model = GradientBoostingClassifier(
-    n_estimators=100, max_depth=4, random_state=42
-)
-scratch_model.fit(X_bb_train, y_bb_train)
-scratch_acc = accuracy_score(y_bb_test, scratch_model.predict(X_bb_test))
 
-# APPROACH 2: Transfer — use Jamaica model directly on Barbados
-transfer_direct_acc = accuracy_score(
-    y_bb_test, source_model.predict(X_bb_test)
-)
+# =====================================================================
+# SECTION 4: Baseline — Train from Scratch on Small Data
+# =====================================================================
+print("\n--- Part 4: Baseline — Training from Scratch ---\n")
 
-# APPROACH 3: Fine-tune — combine Jamaica knowledge + Barbados data
-# We simulate fine-tuning by training on combined features
-# (source model predictions as additional features)
-ja_predictions_train = source_model.predict_proba(X_bb_train)
-ja_predictions_test = source_model.predict_proba(X_bb_test)
-
-X_combined_train = np.hstack([X_bb_train, ja_predictions_train])
-X_combined_test = np.hstack([X_bb_test, ja_predictions_test])
-
-finetune_model = LogisticRegression(max_iter=1000, random_state=42)
-finetune_model.fit(X_combined_train, y_bb_train)
-finetune_acc = accuracy_score(
-    y_bb_test, finetune_model.predict(X_combined_test)
-)
-
-print("\n--- Results Comparison ---\n")
-print(f"  1. Train from scratch (Barbados only):  {scratch_acc:.1%}")
-print(f"  2. Direct transfer (Jamaica model):     {transfer_direct_acc:.1%}")
-print(f"  3. Fine-tuned transfer:                 {finetune_acc:.1%}")
-print("""
-Key Insight: When yuh have limited data (common in smaller Caribbean
-nations), transfer learning often performs better than training from
-scratch. The Jamaica model already learned general tourism patterns
-that apply across the Caribbean!
-
-This is like how a Jamaican sprinter (Usain Bolt) could transition
-to bobsled — the explosive speed and athletic skills TRANSFER!
-""")
+baseline_model = RandomForestClassifier(n_estimators=50, random_state=42)
+baseline_model.fit(X_t_train, y_t_train)
+baseline_acc = accuracy_score(y_t_test, baseline_model.predict(X_t_test))
+print(f"Baseline accuracy (trained from scratch on 35 samples): {baseline_acc:.1%}")
+print("With so little data, the model struggles — just like trying to")
+print("learn cricket by watching only 3 matches!\n")
 
 
 # =====================================================================
-# SECTION 4: Real-World Transfer Learning in Deep Learning
+# SECTION 5: Transfer Learning — Use Source Knowledge
 # =====================================================================
-print("--- Part 4: Transfer Learning with Deep Learning (Concept) ---\n")
-print("""
-In practice, transfer learning is HUGE in deep learning:
+print("--- Part 5: Transfer Learning Approach ---\n")
 
-HOW IT WORKS WITH CNNs (e.g., for Caribbean satellite images):
+# Strategy: Use the source model's feature transformations
+# The Random Forest learned which features matter for Caribbean economies.
+# We extract those learned representations and use them for our new task.
 
-  1. Start with a PRE-TRAINED model (e.g., ResNet, trained on
-     millions of images from ImageNet)
+# Method 1: Feature extraction using source model's leaf indices
+# Each tree in the forest maps input to a leaf node — this IS a
+# learned representation of the economic data!
+source_leaves_train = source_model.apply(X_t_train)  # Leaf indices
+source_leaves_test = source_model.apply(X_t_test)
 
-  2. The early layers already know how to detect:
-     - Edges, corners, textures (Layer 1-2)
-     - Shapes, patterns (Layer 3-4)
-     - Complex objects (Layer 5+)
+print(f"Source model leaf features shape: {source_leaves_train.shape}")
+print(f"(100 trees each assign a leaf index = 100 learned features)")
 
-  3. FREEZE early layers (keep their knowledge)
+# Combine original features with transferred features
+X_t_train_combined = np.hstack([X_t_train, source_leaves_train])
+X_t_test_combined = np.hstack([X_t_test, source_leaves_test])
 
-  4. REPLACE the final classification layer with YOUR task:
-     - Original: 1000 ImageNet classes
-     - New: 5 Caribbean land cover classes
+transfer_model = LogisticRegression(max_iter=1000, random_state=42)
+transfer_model.fit(X_t_train_combined, y_t_train)
+transfer_acc = accuracy_score(y_t_test, transfer_model.predict(X_t_test_combined))
 
-  5. FINE-TUNE on your small Caribbean dataset
+print(f"\nTransfer learning accuracy: {transfer_acc:.1%}")
+print(f"Baseline accuracy:          {baseline_acc:.1%}")
+improvement = transfer_acc - baseline_acc
+if improvement > 0:
+    print(f"Improvement: +{improvement:.1%} -- Transfer learning helps!")
+else:
+    print(f"Similar performance — both domains may be different enough")
+    print(f"that more sophisticated transfer is needed.")
 
-  Result: You get excellent performance even with just a few
-  hundred Caribbean satellite images!
+# Method 2: Feature importance transfer
+print("\n--- Method 2: Feature Importance Transfer ---\n")
+importances = source_model.feature_importances_
+feature_names = ['GDP', 'Employment', 'Exports', 'Seasonal', 'Energy']
+print("Source model learned these feature importances:")
+for name, imp in sorted(zip(feature_names, importances),
+                         key=lambda x: -x[1]):
+    bar = '#' * int(imp * 50)
+    print(f"  {name:<12} {imp:.3f} {bar}")
 
-POPULAR PRE-TRAINED MODELS:
-  - ResNet (image classification)
-  - BERT / GPT (text / language)
-  - YOLOv8 (object detection)
-  - Whisper (speech recognition — could adapt for Caribbean accents!)
+# Use importances as feature weights for the target task
+X_t_train_weighted = X_t_train * importances
+X_t_test_weighted = X_t_test * importances
 
-WHY THIS IS CRITICAL FOR THE CARIBBEAN:
-  - Training GPT-4 from scratch costs millions of USD
-  - Caribbean research budgets are limited
-  - Transfer learning = world-class AI on a Caribbean budget
-  - UWI researchers regularly use transfer learning for local tasks
-""")
+weighted_model = LogisticRegression(max_iter=1000, random_state=42)
+weighted_model.fit(X_t_train_weighted, y_t_train)
+weighted_acc = accuracy_score(y_t_test, weighted_model.predict(X_t_test_weighted))
+print(f"\nWeighted transfer accuracy: {weighted_acc:.1%}")
 
 
 # =====================================================================
-# SECTION 5: Hands-On Exercise
+# SECTION 6: Summary & Caribbean Applications
 # =====================================================================
-print("--- Part 5: Try It Yourself ---\n")
-print("""
-EXERCISE: Transfer Learning for Caribbean Agriculture
+print("\n--- Part 6: Real-World Caribbean Transfer Learning ---\n")
+print(f"""
+RESULTS COMPARISON:
+  Baseline (from scratch):       {baseline_acc:.1%}
+  Transfer (leaf features):      {transfer_acc:.1%}
+  Transfer (weighted features):  {weighted_acc:.1%}
 
-Scenario: You trained a crop disease classifier on Jamaican banana
-plants (large dataset). Now you want to classify diseases on
-St. Lucian banana plants (small dataset, only 50 images).
+REAL-WORLD CARIBBEAN APPLICATIONS:
 
-Steps to try:
-  1. Generate synthetic "Jamaica" crop data (large, 500 samples)
-  2. Train a RandomForest classifier
-  3. Generate synthetic "St. Lucia" crop data (small, 50 samples)
-  4. Compare: train from scratch vs. transfer from Jamaica model
-  5. Which approach gives better accuracy?
+1. MEDICAL IMAGING (All Caribbean hospitals)
+   - Take a model trained on millions of US X-rays
+   - Fine-tune on a few hundred Caribbean patient scans
+   - Works for sickle cell, tropical diseases unique to our region
 
-Hint: The crops are similar (both Caribbean banana varieties),
-so knowledge SHOULD transfer well — like how cricket skills
-transfer between playing in Sabina Park vs Kensington Oval!
+2. LANGUAGE MODELS (Jamaica, Trinidad, Haiti, Curacao)
+   - Start with English language model, fine-tune on Patois/Creole
+   - Much better than training from scratch with limited Creole text
+
+3. CROP DISEASE DETECTION (Guyana, Belize, St Vincent)
+   - Pre-trained on global crop datasets (millions of images)
+   - Fine-tune on local crops: dasheen, breadfruit, ackee, cassava
+
+4. MARINE SPECIES ID (Belize, Bonaire, Tobago)
+   - Global fish recognition model adapted for Caribbean species
+   - Like a footballer learning a new position — base skills transfer!
+
+5. DISASTER RESPONSE (Hurricane-prone nations)
+   - Models trained on global disaster imagery
+   - Adapted for Caribbean building styles and terrain
+
+KEY INSIGHT: Transfer learning is the great equalizer! Caribbean
+nations with small datasets can leverage global AI advances.
+It's like how Caribbean athletes compete globally despite small
+populations — we maximize what we have!
 """)
 
 
@@ -284,86 +315,77 @@ print("=" * 65)
 print("  QUIZ: Transfer Learning")
 print("=" * 65)
 print("""
-Q1: What is transfer learning in one sentence?
-    a) Training a model to transfer data between computers
-    b) Using knowledge learned from one task to improve
-       performance on a different but related task
-    c) Copying a model without any changes
+Q1: What is transfer learning?
+    a) Moving a computer from one island to another
+    b) Using knowledge learned from one task to improve performance
+       on a different but related task
+    c) Copying a dataset
     d) Training two models at the same time
 
-Q2: Why is transfer learning particularly valuable for Caribbean
-    AI applications?
-    a) Caribbean data is always perfect
-    b) Small island nations often have limited datasets, and
-       transfer learning leverages larger external datasets
+Q2: Why is transfer learning especially valuable for Caribbean AI?
+    a) Caribbean computers are faster
+    b) Caribbean datasets are often small due to smaller populations,
+       so leveraging pre-trained models saves time and improves results
     c) It only works in tropical climates
-    d) It's cheaper than buying computers
+    d) Caribbean data is easier to collect
 
-Q3: In CNN transfer learning, why do we freeze early layers?
-    a) To make training faster only
-    b) Because early layers learn general features (edges, textures)
-       that are useful across many tasks
-    c) Because early layers are broken
-    d) To reduce the model size
+Q3: In our demo, what was the "source task"?
+    a) Investment risk classification
+    b) Economic sector classification (with 500 samples)
+    c) Image recognition
+    d) Language translation
 
 Q4: What does "fine-tuning" mean in transfer learning?
     a) Making the model smaller
-    b) Retraining only the later layers on your new target dataset
-       while keeping early layer knowledge
-    c) Fixing bugs in the code
-    d) Training from scratch
+    b) Taking a pre-trained model and retraining some layers on new data
+    c) Tuning a radio to a Caribbean station
+    d) Removing all learned weights
 
-Q5: In our experiment, why might the Jamaica tourism model work
-    well on Barbados data?
-    a) Jamaica and Barbados are the same country
-    b) Tourism patterns across Caribbean nations share similar
-       seasonal trends and economic features
-    c) The model memorized Barbados data
-    d) Random chance
-
-Q6: What is a "pre-trained model"?
-    a) A model that has not been trained yet
-    b) A model previously trained on a large dataset that can be
-       adapted for new tasks
-    c) A model that only works once
-    d) A model trained on Caribbean data only
-
-Q7: A UWI researcher has 100 coral reef images from Tobago.
-    What transfer learning strategy would you recommend?
-    a) Train a massive CNN from scratch
-    b) Use a pre-trained ImageNet model, freeze early layers,
-       and fine-tune the last layers on the 100 Tobago images
+Q5: A UWI researcher has 200 labelled images of Caribbean coral
+    species. What transfer learning strategy would you recommend?
+    a) Train from scratch — 200 is plenty
+    b) Use a model pre-trained on ImageNet, freeze early layers,
+       fine-tune later layers on the 200 coral images
     c) Don't use AI at all
-    d) Collect 1 million more images first
+    d) Only use text data
 
-Q8: What is the main RISK of transfer learning?
-    a) It's too fast
-    b) If the source and target tasks are too different, the
-       transferred knowledge may hurt rather than help
-       (negative transfer)
-    c) It uses too little memory
-    d) It always overfits
+Q6: What is "domain adaptation"?
+    a) Buying a new internet domain
+    b) Adapting a model trained in one domain (e.g., US health data)
+       to work well in a different domain (e.g., Caribbean health data)
+    c) Changing the model's programming language
+    d) Adapting to a new classroom
 
-Q9: How is transfer learning like a West Indies cricketer
-    switching from Test to T20 format?
-    a) It's not related at all
-    b) Core skills (batting technique, bowling accuracy) transfer,
-       but the player fine-tunes strategy for the new format
-    c) They have to relearn everything
-    d) The cricket ball is different
+Q7: In our experiment, how did we "transfer" knowledge from the
+    source model to the target task?
+    a) We copied the labels
+    b) We used the source Random Forest's leaf node indices as
+       additional features for the target model
+    c) We used the same model without changes
+    d) We deleted the source model
 
-Q10: Name TWO Caribbean applications where transfer learning
-     from international models would be beneficial.
-     a) Training models on Mars data
-     b) Adapting an English NLP model for Caribbean Creole text,
-        and adapting a global weather model for Caribbean hurricanes
-     c) Building a calculator app
-     d) Designing websites
+Q8: Why might transfer learning NOT work well sometimes?
+    a) The source and target domains are too different (negative transfer)
+    b) The computer is too old
+    c) Transfer learning always works perfectly
+    d) The data is too clean
+
+Q9: How is transfer learning like a Caribbean athlete switching sports?
+    a) It's not similar at all
+    b) Base skills (fitness, coordination) transfer, but sport-specific
+       skills still need to be learned — similar to how general
+       features transfer but task-specific layers need retraining
+    c) Athletes don't switch sports
+    d) They have to start from zero
+
+Q10: Name two Caribbean-specific tasks where transfer learning
+     from global models would be beneficial.
+     (Open-ended — discuss with classmates!)
 
 (Answers in quiz_answers.md)
 """)
 
 print("=" * 65)
-print("  Lesson 03 Complete! Knowledge transfers — just like skills!")
-print("  Next up: Reinforcement Learning — AI learns by doing")
+print("  Lesson 03 Complete! Transfer learning = work smarter!")
+print("  Next up: Reinforcement Learning")
 print("=" * 65)
