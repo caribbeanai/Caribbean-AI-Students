@@ -1,0 +1,485 @@
+island,year,crop,yield_tonnes,price_usd_per_tonne
+Cuba,2015,sugarcane,47019.5,37.04
+Cuba,2016,sugarcane,44780.2,32.11
+Cuba,2017,sugarcane,41407.4,40.14
+Cuba,2018,sugarcane,38503.2,40.57
+Cuba,2019,sugarcane,51089.4,34.66
+Cuba,2020,sugarcane,44682.2,42.54
+Cuba,2021,sugarcane,40022.6,42.77
+Cuba,2022,sugarcane,55293.2,40.75
+Cuba,2023,sugarcane,52697.3,38.52
+Cuba,2024,sugarcane,50553.9,37.92
+Cuba,2025,sugarcane,47253.9,37.8
+Dominican Republic,2015,sugarcane,37314.6,30.87
+Dominican Republic,2016,sugarcane,43846.9,32.21
+Dominican Republic,2017,sugarcane,55454.0,37.69
+Dominican Republic,2018,sugarcane,47858.2,34.23
+Dominican Republic,2019,sugarcane,41236.1,36.59
+Dominican Republic,2020,sugarcane,51559.3,37.18
+Dominican Republic,2021,sugarcane,42397.4,42.9
+Dominican Republic,2022,sugarcane,38554.7,40.69
+Dominican Republic,2023,sugarcane,56933.4,43.73
+Dominican Republic,2024,sugarcane,37882.0,40.22
+Dominican Republic,2025,sugarcane,52337.9,42.94
+Jamaica,2015,sugarcane,40054.9,37.79
+Jamaica,2016,sugarcane,31860.2,36.61
+Jamaica,2017,sugarcane,35842.7,38.15
+Jamaica,2018,sugarcane,33175.9,38.78
+Jamaica,2019,sugarcane,33968.0,39.3
+Jamaica,2020,sugarcane,45853.6,37.19
+Jamaica,2021,sugarcane,38762.0,41.13
+Jamaica,2022,sugarcane,41359.0,37.36
+Jamaica,2023,sugarcane,47529.5,38.91
+Jamaica,2024,sugarcane,34305.2,37.88
+Jamaica,2025,sugarcane,35001.6,38.15
+Barbados,2015,sugarcane,27473.9,32.05
+Barbados,2016,sugarcane,29040.8,37.31
+Barbados,2017,sugarcane,36579.5,35.84
+Barbados,2018,sugarcane,29637.0,41.04
+Barbados,2019,sugarcane,35958.5,41.77
+Barbados,2020,sugarcane,30482.1,34.19
+Barbados,2021,sugarcane,28287.7,35.12
+Barbados,2022,sugarcane,30574.1,37.53
+Barbados,2023,sugarcane,31156.0,42.14
+Barbados,2024,sugarcane,36128.7,39.55
+Barbados,2025,sugarcane,29851.2,46.7
+Trinidad and Tobago,2015,sugarcane,26547.0,38.49
+Trinidad and Tobago,2016,sugarcane,30774.6,31.48
+Trinidad and Tobago,2017,sugarcane,35492.6,35.66
+Trinidad and Tobago,2018,sugarcane,32044.4,33.97
+Trinidad and Tobago,2019,sugarcane,32644.6,38.74
+Trinidad and Tobago,2020,sugarcane,38590.9,40.54
+Trinidad and Tobago,2021,sugarcane,30745.2,40.44
+Trinidad and Tobago,2022,sugarcane,35202.8,38.68
+Trinidad and Tobago,2023,sugarcane,24251.8,43.76
+Trinidad and Tobago,2024,sugarcane,29283.1,39.64
+Trinidad and Tobago,2025,sugarcane,35026.6,42.05
+Guadeloupe,2015,sugarcane,25933.3,39.15
+Guadeloupe,2016,sugarcane,25687.3,35.14
+Guadeloupe,2017,sugarcane,30543.5,36.01
+Guadeloupe,2018,sugarcane,26971.1,37.45
+Guadeloupe,2019,sugarcane,24867.6,36.28
+Guadeloupe,2020,sugarcane,24573.4,41.2
+Guadeloupe,2021,sugarcane,26788.9,43.24
+Guadeloupe,2022,sugarcane,30492.6,37.32
+Guadeloupe,2023,sugarcane,24083.9,40.11
+Guadeloupe,2024,sugarcane,24431.6,36.73
+Guadeloupe,2025,sugarcane,25021.4,39.52
+Saint Kitts and Nevis,2015,sugarcane,17228.2,31.14
+Saint Kitts and Nevis,2016,sugarcane,22610.4,34.82
+Saint Kitts and Nevis,2017,sugarcane,20534.2,39.04
+Saint Kitts and Nevis,2018,sugarcane,18818.1,37.51
+Saint Kitts and Nevis,2019,sugarcane,19074.1,41.91
+Saint Kitts and Nevis,2020,sugarcane,23052.9,36.71
+Saint Kitts and Nevis,2021,sugarcane,19106.0,43.8
+Saint Kitts and Nevis,2022,sugarcane,18453.5,37.87
+Saint Kitts and Nevis,2023,sugarcane,16288.9,45.37
+Saint Kitts and Nevis,2024,sugarcane,20511.6,41.75
+Saint Kitts and Nevis,2025,sugarcane,18938.3,37.76
+Haiti,2015,sugarcane,16482.5,30.97
+Haiti,2016,sugarcane,12755.6,33.63
+Haiti,2017,sugarcane,16031.2,35.66
+Haiti,2018,sugarcane,16169.2,34.11
+Haiti,2019,sugarcane,13371.9,36.07
+Haiti,2020,sugarcane,15377.4,34.51
+Haiti,2021,sugarcane,19532.4,42.52
+Haiti,2022,sugarcane,11430.7,42.57
+Haiti,2023,sugarcane,18835.2,45.13
+Haiti,2024,sugarcane,12877.3,37.55
+Haiti,2025,sugarcane,18405.1,41.65
+Puerto Rico,2015,sugarcane,8256.8,33.14
+Puerto Rico,2016,sugarcane,8368.7,34.44
+Puerto Rico,2017,sugarcane,8658.8,40.29
+Puerto Rico,2018,sugarcane,11593.8,38.17
+Puerto Rico,2019,sugarcane,12463.5,42.26
+Puerto Rico,2020,sugarcane,8286.4,38.7
+Puerto Rico,2021,sugarcane,10208.5,43.82
+Puerto Rico,2022,sugarcane,10931.4,38.37
+Puerto Rico,2023,sugarcane,10284.0,36.74
+Puerto Rico,2024,sugarcane,11058.3,38.45
+Puerto Rico,2025,sugarcane,9336.5,44.76
+Martinique,2015,sugarcane,4791.1,39.14
+Martinique,2016,sugarcane,4378.9,39.24
+Martinique,2017,sugarcane,5095.4,35.42
+Martinique,2018,sugarcane,4874.0,33.02
+Martinique,2019,sugarcane,4361.4,36.49
+Martinique,2020,sugarcane,6533.3,39.87
+Martinique,2021,sugarcane,5183.7,43.62
+Martinique,2022,sugarcane,5371.3,43.18
+Martinique,2023,sugarcane,5400.0,36.86
+Martinique,2024,sugarcane,4378.5,46.22
+Martinique,2025,sugarcane,5539.7,43.26
+Trinidad and Tobago,2015,cocoa,651.3,2390.24
+Trinidad and Tobago,2016,cocoa,752.4,2423.59
+Trinidad and Tobago,2017,cocoa,812.8,2475.33
+Trinidad and Tobago,2018,cocoa,867.8,2496.27
+Trinidad and Tobago,2019,cocoa,698.3,2596.28
+Trinidad and Tobago,2020,cocoa,703.0,2770.44
+Trinidad and Tobago,2021,cocoa,636.1,2665.48
+Trinidad and Tobago,2022,cocoa,712.3,2732.18
+Trinidad and Tobago,2023,cocoa,960.1,3200.26
+Trinidad and Tobago,2024,cocoa,925.1,2852.67
+Trinidad and Tobago,2025,cocoa,660.8,2880.33
+Grenada,2015,cocoa,745.3,2327.39
+Grenada,2016,cocoa,736.4,2413.23
+Grenada,2017,cocoa,806.0,2625.78
+Grenada,2018,cocoa,861.6,2681.12
+Grenada,2019,cocoa,762.5,2568.59
+Grenada,2020,cocoa,704.3,3010.92
+Grenada,2021,cocoa,728.4,3081.46
+Grenada,2022,cocoa,729.6,2692.03
+Grenada,2023,cocoa,547.7,3212.49
+Grenada,2024,cocoa,712.5,2933.7
+Grenada,2025,cocoa,722.0,3030.21
+Dominican Republic,2015,cocoa,557.6,2536.71
+Dominican Republic,2016,cocoa,632.4,2347.05
+Dominican Republic,2017,cocoa,668.0,2828.82
+Dominican Republic,2018,cocoa,596.9,2470.91
+Dominican Republic,2019,cocoa,642.3,2996.32
+Dominican Republic,2020,cocoa,737.6,3073.17
+Dominican Republic,2021,cocoa,512.6,2647.67
+Dominican Republic,2022,cocoa,771.7,2636.28
+Dominican Republic,2023,cocoa,610.8,2698.86
+Dominican Republic,2024,cocoa,665.7,2969.67
+Dominican Republic,2025,cocoa,613.0,3065.35
+Haiti,2015,cocoa,597.5,2349.42
+Haiti,2016,cocoa,571.5,2501.18
+Haiti,2017,cocoa,576.3,2898.16
+Haiti,2018,cocoa,493.7,2492.87
+Haiti,2019,cocoa,437.2,2791.25
+Haiti,2020,cocoa,485.3,2507.42
+Haiti,2021,cocoa,500.1,2964.56
+Haiti,2022,cocoa,647.7,2598.95
+Haiti,2023,cocoa,552.9,2951.9
+Haiti,2024,cocoa,643.8,3183.62
+Haiti,2025,cocoa,428.8,2788.56
+Jamaica,2015,cocoa,405.1,2671.36
+Jamaica,2016,cocoa,513.5,2495.61
+Jamaica,2017,cocoa,514.3,2564.69
+Jamaica,2018,cocoa,421.8,2463.51
+Jamaica,2019,cocoa,477.8,2932.06
+Jamaica,2020,cocoa,510.5,3046.43
+Jamaica,2021,cocoa,447.3,2755.17
+Jamaica,2022,cocoa,441.3,3078.24
+Jamaica,2023,cocoa,546.6,2693.87
+Jamaica,2024,cocoa,397.8,2796.68
+Jamaica,2025,cocoa,456.7,2980.73
+Cuba,2015,cocoa,385.3,2472.66
+Cuba,2016,cocoa,332.6,2366.97
+Cuba,2017,cocoa,477.3,2889.23
+Cuba,2018,cocoa,352.1,2610.65
+Cuba,2019,cocoa,353.0,2794.1
+Cuba,2020,cocoa,416.6,2784.15
+Cuba,2021,cocoa,396.5,2643.88
+Cuba,2022,cocoa,365.6,2575.6
+Cuba,2023,cocoa,474.5,2767.91
+Cuba,2024,cocoa,362.7,3273.67
+Cuba,2025,cocoa,376.7,2821.51
+Saint Lucia,2015,cocoa,296.1,2758.82
+Saint Lucia,2016,cocoa,358.3,2809.75
+Saint Lucia,2017,cocoa,374.5,2897.93
+Saint Lucia,2018,cocoa,270.4,2540.21
+Saint Lucia,2019,cocoa,345.1,2744.03
+Saint Lucia,2020,cocoa,236.7,2491.59
+Saint Lucia,2021,cocoa,311.6,2632.78
+Saint Lucia,2022,cocoa,373.3,2938.13
+Saint Lucia,2023,cocoa,384.2,2945.39
+Saint Lucia,2024,cocoa,303.9,3038.23
+Saint Lucia,2025,cocoa,375.7,3257.61
+Dominica,2015,cocoa,225.4,2519.49
+Dominica,2016,cocoa,226.4,2588.21
+Dominica,2017,cocoa,231.2,2847.06
+Dominica,2018,cocoa,223.5,2462.35
+Dominica,2019,cocoa,251.0,2423.05
+Dominica,2020,cocoa,282.2,2711.25
+Dominica,2021,cocoa,214.3,2610.81
+Dominica,2022,cocoa,192.7,3136.05
+Dominica,2023,cocoa,260.1,2999.54
+Dominica,2024,cocoa,312.1,2662.19
+Dominica,2025,cocoa,302.1,2707.33
+Suriname,2015,cocoa,138.7,2647.85
+Suriname,2016,cocoa,172.4,2535.32
+Suriname,2017,cocoa,131.1,2760.57
+Suriname,2018,cocoa,186.3,2643.35
+Suriname,2019,cocoa,202.1,2951.08
+Suriname,2020,cocoa,132.8,2571.36
+Suriname,2021,cocoa,149.6,2931.97
+Suriname,2022,cocoa,202.2,2888.5
+Suriname,2023,cocoa,147.7,3234.57
+Suriname,2024,cocoa,176.4,2732.32
+Suriname,2025,cocoa,179.8,2672.55
+Saint Vincent and the Grenadines,2015,cocoa,70.0,2318.59
+Saint Vincent and the Grenadines,2016,cocoa,64.0,2519.07
+Saint Vincent and the Grenadines,2017,cocoa,73.8,2740.86
+Saint Vincent and the Grenadines,2018,cocoa,83.4,2813.19
+Saint Vincent and the Grenadines,2019,cocoa,93.6,2655.82
+Saint Vincent and the Grenadines,2020,cocoa,91.9,2524.99
+Saint Vincent and the Grenadines,2021,cocoa,71.4,2487.61
+Saint Vincent and the Grenadines,2022,cocoa,75.0,2795.52
+Saint Vincent and the Grenadines,2023,cocoa,63.1,2602.96
+Saint Vincent and the Grenadines,2024,cocoa,78.8,3091.38
+Saint Vincent and the Grenadines,2025,cocoa,74.9,3153.88
+Saint Lucia,2015,banana,13324.1,493.3
+Saint Lucia,2016,banana,13063.2,468.43
+Saint Lucia,2017,banana,10694.6,504.93
+Saint Lucia,2018,banana,12600.0,444.44
+Saint Lucia,2019,banana,10840.9,525.27
+Saint Lucia,2020,banana,11262.2,507.63
+Saint Lucia,2021,banana,15102.9,544.6
+Saint Lucia,2022,banana,10203.0,546.56
+Saint Lucia,2023,banana,11137.7,532.2
+Saint Lucia,2024,banana,12934.5,474.14
+Saint Lucia,2025,banana,13883.9,586.29
+Dominica,2015,banana,10297.7,466.16
+Dominica,2016,banana,12004.6,409.74
+Dominica,2017,banana,9734.8,501.58
+Dominica,2018,banana,8567.3,518.02
+Dominica,2019,banana,9941.1,490.55
+Dominica,2020,banana,8928.6,446.71
+Dominica,2021,banana,9877.5,543.69
+Dominica,2022,banana,8853.6,554.6
+Dominica,2023,banana,9945.1,546.9
+Dominica,2024,banana,8598.4,523.65
+Dominica,2025,banana,11208.1,485.59
+Saint Vincent and the Grenadines,2015,banana,10039.8,469.58
+Saint Vincent and the Grenadines,2016,banana,10761.2,407.57
+Saint Vincent and the Grenadines,2017,banana,6690.6,486.52
+Saint Vincent and the Grenadines,2018,banana,7976.9,423.23
+Saint Vincent and the Grenadines,2019,banana,9228.0,521.92
+Saint Vincent and the Grenadines,2020,banana,9093.9,458.22
+Saint Vincent and the Grenadines,2021,banana,10586.5,538.31
+Saint Vincent and the Grenadines,2022,banana,9663.9,548.39
+Saint Vincent and the Grenadines,2023,banana,11108.3,549.46
+Saint Vincent and the Grenadines,2024,banana,11536.4,552.94
+Saint Vincent and the Grenadines,2025,banana,11285.8,512.77
+Jamaica,2015,banana,6785.4,454.94
+Jamaica,2016,banana,7095.9,463.41
+Jamaica,2017,banana,7443.2,498.1
+Jamaica,2018,banana,7464.9,452.84
+Jamaica,2019,banana,7926.0,471.94
+Jamaica,2020,banana,6669.2,438.72
+Jamaica,2021,banana,7935.9,475.13
+Jamaica,2022,banana,7388.2,493.48
+Jamaica,2023,banana,8141.5,525.76
+Jamaica,2024,banana,8456.2,497.33
+Jamaica,2025,banana,7136.7,504.73
+Martinique,2015,banana,6530.4,435.55
+Martinique,2016,banana,8291.1,445.27
+Martinique,2017,banana,5872.3,482.04
+Martinique,2018,banana,5385.2,466.72
+Martinique,2019,banana,8275.3,499.77
+Martinique,2020,banana,7271.0,509.78
+Martinique,2021,banana,8338.8,555.36
+Martinique,2022,banana,5794.5,484.41
+Martinique,2023,banana,5526.7,508.43
+Martinique,2024,banana,7867.6,538.11
+Martinique,2025,banana,6862.7,556.27
+Guadeloupe,2015,banana,5486.4,415.16
+Guadeloupe,2016,banana,6841.9,506.47
+Guadeloupe,2017,banana,5709.6,497.64
+Guadeloupe,2018,banana,5423.1,450.42
+Guadeloupe,2019,banana,4626.3,508.94
+Guadeloupe,2020,banana,6027.6,455.9
+Guadeloupe,2021,banana,6434.7,531.89
+Guadeloupe,2022,banana,5461.6,481.32
+Guadeloupe,2023,banana,6206.3,505.5
+Guadeloupe,2024,banana,6840.7,494.54
+Guadeloupe,2025,banana,6088.3,485.85
+Grenada,2015,banana,5616.9,427.5
+Grenada,2016,banana,5418.7,442.99
+Grenada,2017,banana,5406.3,509.14
+Grenada,2018,banana,3718.3,445.98
+Grenada,2019,banana,4930.3,507.37
+Grenada,2020,banana,4773.9,543.88
+Grenada,2021,banana,3542.4,489.15
+Grenada,2022,banana,4489.9,487.22
+Grenada,2023,banana,5401.7,522.65
+Grenada,2024,banana,6163.3,560.41
+Grenada,2025,banana,4791.1,540.13
+Suriname,2015,banana,3242.2,431.81
+Suriname,2016,banana,4112.9,495.55
+Suriname,2017,banana,2951.5,416.06
+Suriname,2018,banana,3463.4,517.41
+Suriname,2019,banana,3429.3,452.05
+Suriname,2020,banana,3876.0,534.03
+Suriname,2021,banana,3135.0,529.27
+Suriname,2022,banana,3302.7,468.85
+Suriname,2023,banana,2825.6,534.51
+Suriname,2024,banana,3935.7,567.62
+Suriname,2025,banana,3913.9,500.94
+Dominican Republic,2015,banana,2431.6,417.38
+Dominican Republic,2016,banana,1989.7,439.5
+Dominican Republic,2017,banana,2214.3,507.85
+Dominican Republic,2018,banana,2803.7,524.87
+Dominican Republic,2019,banana,2485.3,516.14
+Dominican Republic,2020,banana,2170.9,490.45
+Dominican Republic,2021,banana,2372.6,510.36
+Dominican Republic,2022,banana,3034.0,452.75
+Dominican Republic,2023,banana,2272.5,584.3
+Dominican Republic,2024,banana,1836.0,566.51
+Dominican Republic,2025,banana,1942.1,552.6
+Haiti,2015,banana,1275.0,436.75
+Haiti,2016,banana,1184.1,432.99
+Haiti,2017,banana,1158.1,425.28
+Haiti,2018,banana,1263.6,420.11
+Haiti,2019,banana,1174.7,470.59
+Haiti,2020,banana,1245.8,442.48
+Haiti,2021,banana,1016.9,458.42
+Haiti,2022,banana,1300.2,486.76
+Haiti,2023,banana,1182.9,509.1
+Haiti,2024,banana,1314.0,542.03
+Haiti,2025,banana,1363.7,497.31
+Grenada,2015,nutmeg,2827.4,8204.61
+Grenada,2016,nutmeg,2199.5,8064.61
+Grenada,2017,nutmeg,2217.5,7505.75
+Grenada,2018,nutmeg,3006.1,9207.13
+Grenada,2019,nutmeg,2264.6,8447.67
+Grenada,2020,nutmeg,2934.7,9075.57
+Grenada,2021,nutmeg,2720.8,8943.6
+Grenada,2022,nutmeg,2398.0,9756.35
+Grenada,2023,nutmeg,2155.4,8425.9
+Grenada,2024,nutmeg,2306.6,8347.91
+Grenada,2025,nutmeg,1979.4,10729.56
+Trinidad and Tobago,2015,nutmeg,2027.8,7789.93
+Trinidad and Tobago,2016,nutmeg,2301.9,8887.03
+Trinidad and Tobago,2017,nutmeg,1625.4,8231.4
+Trinidad and Tobago,2018,nutmeg,2134.9,7665.81
+Trinidad and Tobago,2019,nutmeg,1811.3,9464.24
+Trinidad and Tobago,2020,nutmeg,2241.9,8819.17
+Trinidad and Tobago,2021,nutmeg,1992.0,8928.57
+Trinidad and Tobago,2022,nutmeg,2582.1,9254.33
+Trinidad and Tobago,2023,nutmeg,2765.1,10357.79
+Trinidad and Tobago,2024,nutmeg,2543.7,10489.27
+Trinidad and Tobago,2025,nutmeg,1893.7,9725.64
+Saint Vincent and the Grenadines,2015,nutmeg,2342.2,8538.07
+Saint Vincent and the Grenadines,2016,nutmeg,1697.7,8870.57
+Saint Vincent and the Grenadines,2017,nutmeg,2382.4,8377.12
+Saint Vincent and the Grenadines,2018,nutmeg,1772.4,8775.38
+Saint Vincent and the Grenadines,2019,nutmeg,1915.6,7815.69
+Saint Vincent and the Grenadines,2020,nutmeg,1958.4,7782.13
+Saint Vincent and the Grenadines,2021,nutmeg,2290.7,10020.56
+Saint Vincent and the Grenadines,2022,nutmeg,1919.2,8658.93
+Saint Vincent and the Grenadines,2023,nutmeg,2300.1,9758.07
+Saint Vincent and the Grenadines,2024,nutmeg,1930.7,10136.28
+Saint Vincent and the Grenadines,2025,nutmeg,2043.7,9767.7
+Dominica,2015,nutmeg,1941.0,8239.01
+Dominica,2016,nutmeg,2037.1,8467.02
+Dominica,2017,nutmeg,1986.3,8838.16
+Dominica,2018,nutmeg,1956.2,9011.36
+Dominica,2019,nutmeg,1823.8,8686.06
+Dominica,2020,nutmeg,1569.0,8967.44
+Dominica,2021,nutmeg,1889.4,8200.76
+Dominica,2022,nutmeg,1752.7,9716.01
+Dominica,2023,nutmeg,2117.3,9931.01
+Dominica,2024,nutmeg,2273.4,10324.81
+Dominica,2025,nutmeg,1630.8,10307.51
+Saint Lucia,2015,nutmeg,1329.4,8530.44
+Saint Lucia,2016,nutmeg,1414.6,9062.09
+Saint Lucia,2017,nutmeg,1209.9,7367.45
+Saint Lucia,2018,nutmeg,1399.8,8765.42
+Saint Lucia,2019,nutmeg,1431.3,9452.04
+Saint Lucia,2020,nutmeg,1482.3,8200.0
+Saint Lucia,2021,nutmeg,1703.0,8375.33
+Saint Lucia,2022,nutmeg,1537.8,9475.77
+Saint Lucia,2023,nutmeg,1857.5,10167.59
+Saint Lucia,2024,nutmeg,1615.7,9578.55
+Saint Lucia,2025,nutmeg,1328.7,9103.95
+Jamaica,2015,nutmeg,909.9,7822.35
+Jamaica,2016,nutmeg,1405.5,8947.76
+Jamaica,2017,nutmeg,1228.7,7381.38
+Jamaica,2018,nutmeg,1458.4,8289.16
+Jamaica,2019,nutmeg,1384.0,7907.22
+Jamaica,2020,nutmeg,1223.1,8906.9
+Jamaica,2021,nutmeg,1257.1,9240.31
+Jamaica,2022,nutmeg,1412.3,9255.25
+Jamaica,2023,nutmeg,1332.8,10016.34
+Jamaica,2024,nutmeg,1582.8,10136.07
+Jamaica,2025,nutmeg,1164.5,10576.5
+Jamaica,2015,coffee,1279.3,3412.9
+Jamaica,2016,coffee,1281.1,3332.63
+Jamaica,2017,coffee,1734.0,3145.81
+Jamaica,2018,coffee,1835.9,3662.71
+Jamaica,2019,coffee,1336.7,3042.09
+Jamaica,2020,coffee,1606.4,3604.81
+Jamaica,2021,coffee,1730.4,4012.74
+Jamaica,2022,coffee,1401.4,3549.23
+Jamaica,2023,coffee,1233.2,3438.8
+Jamaica,2024,coffee,1731.7,4069.01
+Jamaica,2025,coffee,1366.0,3724.98
+Cuba,2015,coffee,1073.7,2877.52
+Cuba,2016,coffee,1249.5,3450.23
+Cuba,2017,coffee,1043.1,3070.16
+Cuba,2018,coffee,1308.3,3459.13
+Cuba,2019,coffee,1278.8,3160.43
+Cuba,2020,coffee,1394.5,3333.98
+Cuba,2021,coffee,1081.8,3534.71
+Cuba,2022,coffee,1161.9,3835.64
+Cuba,2023,coffee,1257.7,3625.78
+Cuba,2024,coffee,1666.8,3863.28
+Cuba,2025,coffee,1333.0,3464.05
+Haiti,2015,coffee,1378.1,3450.37
+Haiti,2016,coffee,1471.2,3641.57
+Haiti,2017,coffee,1298.2,2981.99
+Haiti,2018,coffee,1186.3,3747.41
+Haiti,2019,coffee,1212.4,3846.08
+Haiti,2020,coffee,1035.4,3172.95
+Haiti,2021,coffee,1109.6,3461.75
+Haiti,2022,coffee,1355.3,4012.06
+Haiti,2023,coffee,1172.3,4092.55
+Haiti,2024,coffee,1151.7,4225.6
+Haiti,2025,coffee,1521.5,3451.63
+Dominican Republic,2015,coffee,835.5,2984.09
+Dominican Republic,2016,coffee,1037.7,3639.66
+Dominican Republic,2017,coffee,933.3,3364.83
+Dominican Republic,2018,coffee,1202.9,3139.95
+Dominican Republic,2019,coffee,1093.9,3493.48
+Dominican Republic,2020,coffee,980.1,3710.91
+Dominican Republic,2021,coffee,924.2,3195.02
+Dominican Republic,2022,coffee,1180.2,3247.89
+Dominican Republic,2023,coffee,1204.5,3520.25
+Dominican Republic,2024,coffee,874.1,3940.98
+Dominican Republic,2025,coffee,1225.2,3871.5
+Puerto Rico,2015,coffee,1090.7,3385.02
+Puerto Rico,2016,coffee,865.7,3589.23
+Puerto Rico,2017,coffee,763.9,3439.07
+Puerto Rico,2018,coffee,1101.4,3464.45
+Puerto Rico,2019,coffee,931.3,3201.68
+Puerto Rico,2020,coffee,990.8,3242.58
+Puerto Rico,2021,coffee,967.2,3576.52
+Puerto Rico,2022,coffee,1025.3,3414.99
+Puerto Rico,2023,coffee,953.0,4045.84
+Puerto Rico,2024,coffee,1018.8,4091.44
+Puerto Rico,2025,coffee,842.2,3672.68
+Trinidad and Tobago,2015,coffee,540.3,3392.21
+Trinidad and Tobago,2016,coffee,777.0,3487.73
+Trinidad and Tobago,2017,coffee,786.9,3271.04
+Trinidad and Tobago,2018,coffee,867.8,3354.21
+Trinidad and Tobago,2019,coffee,787.8,3819.46
+Trinidad and Tobago,2020,coffee,652.3,3756.45
+Trinidad and Tobago,2021,coffee,680.5,3467.95
+Trinidad and Tobago,2022,coffee,607.5,3284.09
+Trinidad and Tobago,2023,coffee,823.6,3827.08
+Trinidad and Tobago,2024,coffee,671.2,4222.01
+Trinidad and Tobago,2025,coffee,869.6,3392.87
+Guadeloupe,2015,coffee,582.3,3535.66
+Guadeloupe,2016,coffee,609.2,2990.09
+Guadeloupe,2017,coffee,491.3,3677.09
+Guadeloupe,2018,coffee,488.3,3251.48
+Guadeloupe,2019,coffee,562.4,3534.11
+Guadeloupe,2020,coffee,491.2,3750.27
+Guadeloupe,2021,coffee,537.7,3677.72
+Guadeloupe,2022,coffee,560.9,3224.39
+Guadeloupe,2023,coffee,568.4,3300.22
+Guadeloupe,2024,coffee,523.3,3871.31
+Guadeloupe,2025,coffee,710.0,3878.97
+Martinique,2015,coffee,523.1,3347.0
+Martinique,2016,coffee,415.1,2974.15
+Martinique,2017,coffee,489.8,3516.04
+Martinique,2018,coffee,454.1,3511.89
+Martinique,2019,coffee,400.2,3493.9
+Martinique,2020,coffee,468.3,3868.83
+Martinique,2021,coffee,484.7,3460.94
+Martinique,2022,coffee,426.9,3561.9
+Martinique,2023,coffee,413.6,3951.74
+Martinique,2024,coffee,449.7,3880.75
+Martinique,2025,coffee,449.5,4267.18
